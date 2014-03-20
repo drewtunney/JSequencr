@@ -1,9 +1,10 @@
 module AwsHelper
 
 
-  AWS_ACCESS_KEY_ID = ''
-  AWS_SECRET_ACCESS_KEY_ID = ''
-  AWS_REGION= ''
+
+
+  Aws.config = { access_key_id: AWS_ACCESS_KEY_ID, secret_access_key: AWS_SECRET_ACCESS_KEY_ID, region: AWS_REGION }
+
 
 
   def list_buckets
