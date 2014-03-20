@@ -14,12 +14,12 @@ $("div.note").on("click", function(){
 
 //Cyclying through the grid
 
-// var intervalID = window.setInterval(gridCycle, 1000);
 var intervalID;
-  var intervalCounter = 1;
+var intervalCounter = 1;
 
 function gridCycle(){
   var columnCount = $("div.column").length;
+  playSelectedNotes();
   $("div.column").children().removeClass("loop-timer");
   if (intervalCounter > columnCount) {
     intervalCounter = 1;
@@ -27,17 +27,30 @@ function gridCycle(){
   // console.log(intervalCounter);
   $("div#column" + intervalCounter).children().toggleClass("loop-timer");
   intervalCounter++;
-
 }
 
+function playSelectedNotes() {
+  var notesToPlay = $("div.note.loop-timer.selected");
+  $.each(notesToPlay, function(i, note){
+    console.log("hellooo");
+    soundSources[0].play;
+    soundSources[0].stop();
+  });
+}
+
+
+
+//Event listeners
 $("button#start-timer").on('click', function(){
   intervalID = window.setInterval(gridCycle, 1000);
+  playSelectedNotes();
 });
 $("button#pause-timer").on('click', function(){
-  // var intervalID = window.setInterval(gridCycle, 1000);
   clearInterval(intervalID);
 });
 $("button#reset-timer").on('click', function(){
   intervalCounter = 1;
   gridCycle();
 });
+
+
