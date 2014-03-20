@@ -1,0 +1,25 @@
+  .suite-wrapper {
+    position: relative;
+    display: block;
+    width: 30em;
+    margin-left: 5em;
+    margin-top: 5em;
+  }
+
+  .column {
+    float: left;
+    background-color: gray;
+  }
+
+  .note {
+    width: 5em;
+    height: 5em;
+    display: block;
+    background-color: red;
+    border: .25em solid black;
+    border-radius: 1em;
+  }
+
+  .selected {
+    background-color: blue;
+  }
