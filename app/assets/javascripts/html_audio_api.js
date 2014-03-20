@@ -27,12 +27,11 @@ function init() {
 }
 
 
-function playSound(buffer) {
-  var source = context.createBufferSource(); // creates a sound source
-  source.buffer = buffer;                    // tell the source which sound to play
-  source.connect(context.destination);      // connect the source to the context's destination (the speakers)
-  source.start(0);                          // play the source now
-                                            // note: on older systems, may have to use deprecated noteOn(time);
+function playSound(soundSource, position) {
+  soundSource[position] = context.createBufferSource(); //creates a sound source
+  soundSource[position].buffer = bufferLoader.bufferList[0];  // tell the source which sound to play
+  soundSource[position].connect(context.destination);   // connect the source to the context's destination (the speakers)
+  soundSource[position].start(0);                                       // play the source now
 }
 
 function finishedLoading(bufferList) {
@@ -58,8 +57,8 @@ function finishedLoading(bufferList) {
 }
 
 
-var start = $("#start");
-var counter = 0;
+// var start = $("#start");
+// var counter = 0;
 
 
 

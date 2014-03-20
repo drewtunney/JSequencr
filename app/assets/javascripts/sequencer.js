@@ -19,23 +19,20 @@ var intervalCounter = 1;
 
 function gridCycle(){
   var columnCount = $("div.column").length;
-  playSelectedNotes();
   $("div.column").children().removeClass("loop-timer");
   if (intervalCounter > columnCount) {
     intervalCounter = 1;
   }
   // console.log(intervalCounter);
   $("div#column" + intervalCounter).children().toggleClass("loop-timer");
+
+  playSound(soundSources, 2);
   intervalCounter++;
 }
 
+//THIS SHOULDNT BE AN EACH BUT IS CLOSE TO WORKING
 function playSelectedNotes() {
-  var notesToPlay = $("div.note.loop-timer.selected");
-  $.each(notesToPlay, function(i, note){
-    console.log("hellooo");
-    soundSources[0].play;
-    soundSources[0].stop();
-  });
+  // var notesToPlay = $("div.note.loop-timer.selected");
 }
 
 
