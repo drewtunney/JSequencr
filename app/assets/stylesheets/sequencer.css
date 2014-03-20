@@ -23,3 +23,11 @@
   .selected {
     background-color: blue;
   }
+
+  .loop-timer {
+    background-color: green;
+  }
+
+  .selected.loop-timer {
+    background-color: rgb(3,61,3);
+  }
