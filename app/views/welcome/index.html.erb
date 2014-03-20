@@ -1,3 +1,12 @@
+<%= javascript_tag do %>
+  window._awsAccessId = "<%= ENV['AWS_ACCESS_KEY_ID'] %>"
+  window._awsSecretKey = "<%= ENV['AWS_SECRET_ACCESS_KEY'] %>"
+<% end %>
+
+<div id="status"></div>
+<ul id="objects"></ul>
+
+
 <h1>Let's Get Weird</h1>
 
 <button id="start">Start</button>

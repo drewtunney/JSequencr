@@ -6,6 +6,8 @@ class WelcomeController < ApplicationController
     @buckets = list_buckets
 
     @sounds = list_sounds
+
+    @song = song_getter
   end
 
 
