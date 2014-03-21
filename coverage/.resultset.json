@@ -177,56 +177,51 @@
         1,
         null,
         1,
-        0,
+        2,
         null,
-        0,
-        0,
-        0,
-        0,
+        2,
+        2,
+        2,
+        2,
         null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/grangerabuhoff/dev/JSequencr/app/models/sound_pattern.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/grangerabuhoff/dev/JSequencr/spec/models/sound_spec.rb": [
-        1,
         null,
         1,
         2,
         2,
         2,
-        null
-      ],
-      "/Users/grangerabuhoff/dev/JSequencr/app/models/sound.rb": [
-        1,
-        1,
-        1,
-        1,
+        2,
+        2,
+        24,
+        null,
+        null,
+        2,
+        null,
         null,
         null
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/spec/models/user_spec.rb": [
+      "/Users/grangerabuhoff/dev/JSequencr/app/controllers/welcome_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
         1,
         null
       ]
     },
-    "timestamp": 1395424179
+    "timestamp": 1395429957
   }
 }
