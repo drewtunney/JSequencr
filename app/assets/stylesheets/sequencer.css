@@ -1,9 +1,19 @@
-  .suite-wrapper {
+   .sequencer-wrapper {
     position: relative;
     display: block;
+  }
+
+  .sound-selection {
+    display: inline;
+    width: 15%;
+    float: left;
+  }
+
+  .suite-wrapper {
+    display: inline;
     width: 30em;
-    margin-left: 5em;
-    margin-top: 5em;
+    float: left;
+    margin: 1em;
   }
 
   .column {
@@ -31,3 +41,6 @@
   .selected.loop-timer {
     background-color: rgb(3,61,3);
   }
+
+
+

@@ -1,40 +1,45 @@
 <h1>Let's Get Weird</h1>
 
-<button id="start">Start</button>
 <button id="start-timer">Start Timer</button>
 <button id="pause-timer">Pause Timer</button>
 <button id="reset-timer">Reset Timer</button>
 
-<%= @buckets %>
-<br>
+<script>
+  window.fileNames = <%= raw(@sounds.to_json) %>
+</script>
 
-<%= @sounds %>
+<div class="sequencer-wrapper">
+<div class="sound-selection">
+  <p>First</p>
+  <p>Second</p>
+  <p>Third</p>
+  <p>Fourth</p>
+</div>
 
-<div class="content=wrapper">
-  <div class="suite-wrapper">
-    <div class="column" id="column1">
-      <div class="note"></div>
-      <div class="note"></div>
-      <div class="note"></div>
-      <div class="note"></div>
-    </div>
-    <div class="column" id="column2">
-      <div class="note"></div>
-      <div class="note"></div>
-      <div class="note"></div>
-      <div class="note"></div>
-    </div>
-    <div class="column" id="column3">
-      <div class="note"></div>
-      <div class="note"></div>
-      <div class="note"></div>
-      <div class="note"></div>
-    </div>
-    <div class="column" id="column4">
-      <div class="note"></div>
-      <div class="note"></div>
-      <div class="note"></div>
-      <div class="note"></div>
-    </div>
+<div class="suite-wrapper">
+  <div class="column" id="column1">
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
   </div>
+  <div class="column" id="column2">
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+  </div>
+  <div class="column" id="column3">
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+  </div>
+  <div class="column" id="column4">
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+  </div>
+</div>
 </div>

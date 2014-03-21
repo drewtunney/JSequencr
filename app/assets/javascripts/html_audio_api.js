@@ -12,10 +12,10 @@ function init() {
     bufferLoader = new BufferLoader(
       context,
       [
-      'https://dl.dropboxusercontent.com/u/1316153/Cassette808_CL_01.wav',
-      'https://dl.dropboxusercontent.com/u/1316153/Cassette808_BD01.wav',
-      'https://dl.dropboxusercontent.com/u/1316153/Cassette808_Cow01.wav',
-      'https://dl.dropboxusercontent.com/u/1316153/Cassette808_BD01.wav'
+      'https://s3.amazonaws.com/Sounds/snare_2.wav',
+      'https://s3.amazonaws.com/Sounds/cow_bell.wav',
+      'https://s3.amazonaws.com/Sounds/conga.wav',
+      'https://s3.amazonaws.com/Sounds/hand_clap.wav'
       ],
       finishedLoading
       );
