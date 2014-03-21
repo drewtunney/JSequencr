@@ -42,7 +42,7 @@ group :test do
   gem 'jasmine'
 
   # acceptance testing
-  # gem 'capybara-rails'
+  gem 'capybara-rails'
   # gem 'launchy'
 
   # test helper libraries
