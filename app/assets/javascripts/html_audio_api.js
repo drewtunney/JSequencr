@@ -21,6 +21,8 @@ function init() {
     window.AudioContext = window.AudioContext||window.webkitAudioContext;
     context = new AudioContext();
 
+    // needs souldURL - how can we make this more dynamic? load after we get a return from aws? 
+
     bufferLoader = new BufferLoader(context, soundURLs, finishedLoading);
     bufferLoader.load();
     //We need to initialize the notes with data-sound info reflecting the url suffix so that we may query it when we want to play the sound
