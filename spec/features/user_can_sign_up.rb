@@ -7,16 +7,17 @@ describe "user can sign up" do
 
   it "can sign up", js: true do 
       visit root_path
-      # save_and_open_page
+      
 
       fill_in "name", with: "Steve"
       fill_in "email", with: "Steve@steve.com"
       fill_in "password", with: "swordfish"
       fill_in "password_confirmation", with: "swordfish"
-      
-      click_button "Sign up"
-
-      expect(page).to have_content "Steve"
+      save_and_open_page
+      click_button "submit"
+      steve = User.find_by(name: "Steve")
+      expect(steve).to_not be_nil
+      # expect(page).to have_content "Steve"
   end
 
 end
