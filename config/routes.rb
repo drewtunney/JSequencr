@@ -4,4 +4,10 @@ JSequencr::Application.routes.draw do
 
   resources :users, only: [:create]
 
+  get "/login", to: "session#new"
+  post "/session", to: "session#create"
+  delete "/session", to: "session#destroy"
+
+  get "/current_user", to: "session#current_user_return"
+
 end

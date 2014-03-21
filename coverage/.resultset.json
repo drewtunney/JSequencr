@@ -221,6 +221,17 @@
         null,
         null,
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
         null
       ],
       "/Users/stevenweiss/dev/JSequencr/app/models/user.rb": [
@@ -231,8 +242,24 @@
         null,
         1,
         null
+      ],
+      "/Users/stevenweiss/dev/JSequencr/app/controllers/users_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1395434108
+    "timestamp": 1395435717
   }
 }
