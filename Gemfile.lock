@@ -32,6 +32,9 @@ GEM
       jamespath
       multi_json (~> 1.0)
       multi_xml (~> 0.5)
+    bcrypt (3.1.7)
+    bcrypt-ruby (3.1.5)
+      bcrypt (>= 3.1.3)
     builder (3.1.4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -160,6 +163,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk-core
+  bcrypt-ruby (~> 3.1.2)
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   ffaker (~> 1.2.0)
