@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/grangerabuhoff/dev/JSequencr/config/environment.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/application.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/application.rb": [
         1,
         null,
         1,
@@ -33,13 +33,13 @@
         null,
         null
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/boot.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/boot.rb": [
         null,
         1,
         null,
         1
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/environments/test.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/environments/test.rb": [
         1,
         null,
         null,
@@ -77,7 +77,7 @@
         1,
         null
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/aws.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/initializers/aws.rb": [
         1,
         null,
         1,
@@ -87,7 +87,7 @@
         1,
         null
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/backtrace_silencers.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -96,13 +96,13 @@
         null,
         null
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/filter_parameter_logging.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/inflections.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -120,14 +120,14 @@
         null,
         null
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/mime_types.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/secret_token.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -141,12 +141,12 @@
         null,
         1
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/session_store.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/wrap_parameters.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -162,66 +162,77 @@
         null,
         null
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/config/routes.rb": [
+      "/Users/stevenweiss/dev/JSequencr/config/routes.rb": [
+        1,
+        null,
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/app/helpers/application_helper.rb": [
+      "/Users/stevenweiss/dev/JSequencr/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/app/helpers/aws_helper.rb": [
+      "/Users/stevenweiss/dev/JSequencr/app/helpers/aws_helper.rb": [
         1,
         null,
         1,
-        2,
-        null,
-        2,
-        2,
-        2,
-        2,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
-        2,
-        2,
-        24,
-        null,
-        null,
-        2,
-        null,
-        null,
-        null
-      ],
-      "/Users/grangerabuhoff/dev/JSequencr/app/controllers/welcome_controller.rb": [
         1,
         null,
         1,
+        1,
+        1,
+        1,
+        null,
         null,
         1,
-        2,
-        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        12,
         null,
         null,
-        null,
+        1,
         null,
         null,
         null
       ],
-      "/Users/grangerabuhoff/dev/JSequencr/app/controllers/application_controller.rb": [
+      "/Users/stevenweiss/dev/JSequencr/app/controllers/welcome_controller.rb": [
         1,
         null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/stevenweiss/dev/JSequencr/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/stevenweiss/dev/JSequencr/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
         null,
         1,
         null
       ]
     },
-    "timestamp": 1395429957
+    "timestamp": 1395434108
   }
 }
