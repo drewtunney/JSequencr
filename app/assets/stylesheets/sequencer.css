@@ -1,11 +1,12 @@
    .sequencer-wrapper {
     position: relative;
     display: block;
+    margin: 1em;
   }
 
   .sound-selection {
-    display: inline;
-    width: 15%;
+    display: inline-block;
+    width: 10%;
     float: left;
   }
 
@@ -13,7 +14,6 @@
     display: inline;
     width: 30em;
     float: left;
-    margin: 1em;
   }
 
   .column {
