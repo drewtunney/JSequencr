@@ -52,6 +52,11 @@ group :test do
 
   # coverage
   gem 'simplecov'
+
+  gem 'selenium-webdriver'
+
+  gem 'capybara-webkit'
+  
 end
 
 # group :development do 
