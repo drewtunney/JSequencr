@@ -4,7 +4,6 @@ class WelcomeController < ApplicationController
 
   def index
     @buckets = list_buckets
-
     @sounds = list_sounds
   end
 

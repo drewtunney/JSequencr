@@ -31,7 +31,7 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
         console.error('decodeAudioData error', error);
       }
     );
-  }
+  };
 
   request.onerror = function() {
     alert('BufferLoader: XHR error');
