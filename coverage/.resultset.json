@@ -1,0 +1,232 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/grangerabuhoff/dev/JSequencr/config/environment.rb": [
+        null,
+        1,
+        null,
+        null,
+        1
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/application.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/boot.rb": [
+        null,
+        1,
+        null,
+        1
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/environments/test.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/aws.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/backtrace_silencers.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/inflections.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/mime_types.rb": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/secret_token.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/session_store.rb": [
+        null,
+        null,
+        1
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/initializers/wrap_parameters.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/config/routes.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/app/helpers/aws_helper.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/app/models/sound_pattern.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/spec/models/sound_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/app/models/sound.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/grangerabuhoff/dev/JSequencr/spec/models/user_spec.rb": [
+        1,
+        null
+      ]
+    },
+    "timestamp": 1395424179
+  }
+}

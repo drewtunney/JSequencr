@@ -42,7 +42,7 @@ group :test do
   gem 'jasmine'
 
   # acceptance testing
-  # gem 'capybara-rails'
+  gem 'capybara-rails'
   # gem 'launchy'
 
   # test helper libraries
@@ -59,7 +59,7 @@ end
 # end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
