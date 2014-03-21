@@ -1,5 +1,5 @@
 var intervalID;
-var intervalCounter = 1;
+var intervalCounter = 0;
 
 //create a transpose function
 function transpose(array) {
@@ -30,8 +30,8 @@ $("button#reset-timer").on('click', function(){
 function gridCycle(){
   var columnCount = $("div.column").length;
   $("div.column").children().removeClass("loop-timer");
-  if (intervalCounter > columnCount) {
-    intervalCounter = 1;
+  if (intervalCounter > columnCount - 1) {
+    intervalCounter = 0;
   }
   // console.log(intervalCounter);
   $("div#column" + intervalCounter).children().toggleClass("loop-timer");
@@ -43,8 +43,13 @@ function gridCycle(){
 function playSelectedNotes() {
   var notes = $(".loop-timer");
   $.each(notes, function(i, note){
-    var result = $(note).hasClass("selected");
-    result ? playSound(soundSources, i) : null;
+    // TODO hard coding fileName and index for testing
+    var fileName = "drum.wav";
+    var index = 0;
+    var playNote = $(note).hasClass("selected");
+    if (playNote === true) {
+      playSound(soundsToPlay, fileName, index);
+    }
   });
 }
 

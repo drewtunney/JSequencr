@@ -6,7 +6,7 @@ describe "a user can select a specific sound for a row" do
 
     visit root_path
     within ".sound-selection" do
-      expect(page).to have_select('ping')
+      expect(page).to have_select('row0', 'Ping')
     end
 
   end
