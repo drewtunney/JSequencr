@@ -1,12 +1,22 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# describe "user can sign up" do
-#   visit root_path
+describe "user can sign up" do
+  before(:all) do
+    Capybara.javascript_driver = :webkit
+  end
 
-#   fill_in :user_email, with: "Steve@steve.com"
-#   fill_in :user_password, with: "swordfish"
-#   fill_in :user_password_confirmation, with: "swordfish"
-  
-#   click_button ""
+  it "can sign up", js: true do 
+      visit root_path
+      # save_and_open_page
 
-# end
+      fill_in "name", with: "Steve"
+      fill_in "email", with: "Steve@steve.com"
+      fill_in "password", with: "swordfish"
+      fill_in "password_confirmation", with: "swordfish"
+      
+      click_button "Sign up"
+
+      expect(page).to have_content "Steve"
+  end
+
+end
