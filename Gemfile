@@ -42,6 +42,7 @@ group :test do
   gem 'jasmine'
 
   # acceptance testing
+
   gem 'capybara'
   gem 'launchy'
 

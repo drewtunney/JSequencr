@@ -5,6 +5,16 @@
 <button id="pause-timer">Pause Timer</button>
 <button id="reset-timer">Reset Timer</button>
 
+<form id="tempo">
+  <input name="BPM"
+         type="number"
+         min="20"
+         max="240"
+         step="1"
+         value="120">
+  <input type="submit" value="Set BPM">
+</form>
+
 <%= @buckets %>
 <br>
 
