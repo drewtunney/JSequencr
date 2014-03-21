@@ -13,7 +13,7 @@ describe "user can sign up" do
       fill_in "email", with: "Steve@steve.com"
       fill_in "password", with: "swordfish"
       fill_in "password_confirmation", with: "swordfish"
-      save_and_open_page
+      # save_and_open_page
       click_button "submit"
       steve = User.find_by(name: "Steve")
       expect(steve).to_not be_nil
