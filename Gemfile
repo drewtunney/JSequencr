@@ -42,8 +42,8 @@ group :test do
   gem 'jasmine'
 
   # acceptance testing
-  gem 'capybara-rails'
-  # gem 'launchy'
+  gem 'capybara'
+  gem 'launchy'
 
   # test helper libraries
   gem 'shoulda-matchers'
@@ -52,6 +52,11 @@ group :test do
 
   # coverage
   gem 'simplecov'
+
+  #selenium
+  gem 'selenium-webdriver'
+
+  gem 'capybara-webkit'
 end
 
 # group :development do 
@@ -59,7 +64,7 @@ end
 # end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
