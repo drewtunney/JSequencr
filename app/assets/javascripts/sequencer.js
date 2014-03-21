@@ -14,7 +14,7 @@ $("div.note").on("click", function(){
   $(this).toggleClass("selected");
 });
 $("button#start-timer").on('click', function(){
-  intervalID = window.setInterval(gridCycle, 1000);
+  intervalID = window.setInterval(gridCycle, 400);
   // playSelectedNotes();
 });
 $("button#pause-timer").on('click', function(){
