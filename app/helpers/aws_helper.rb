@@ -1,12 +1,17 @@
 module AwsHelper
 
+<<<<<<< HEAD
   Aws.config = { 
     access_key_id: AWS_ACCESS_KEY_ID, 
     secret_access_key: AWS_SECRET_ACCESS_KEY_ID, 
     region: AWS_REGION 
   } 
 
+=======
+>>>>>>> 1eed15db69a2f883f07a6c27b32abe899da52a84
   def list_buckets
+    Aws.config = { access_key_id: AWS_ACCESS_KEY_ID, secret_access_key: AWS_SECRET_ACCESS_KEY_ID, region: AWS_REGION }
+
     s3 = Aws::S3.new
     s3 = Aws.s3
     resp = s3.list_buckets
