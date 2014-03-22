@@ -9,7 +9,7 @@ $("<label>").text("Name:").appendTo(signUpForm);
 var nameSpace = $("<input id='name' name='name'>").appendTo(signUpForm);
 
 $("<label>").text("Email:").appendTo(signUpForm);
-var emailSpace = $("<input id='email' name='email'>").appendTo(signUpForm);
+var emailSpace = $("<input id='email' name='email' type='email'>").appendTo(signUpForm);
 
 $("<label>").text("Password:").appendTo(signUpForm);
 var passwordSpace = $("<input id='password'type='password'>").appendTo(signUpForm);
