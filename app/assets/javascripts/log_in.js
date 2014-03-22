@@ -18,8 +18,6 @@ $("#nav-bar").append(logoutButton);
 var login = function(){
   var loginEmail = loginEmailSpace.val();
   var loginPassword = loginPasswordSpace.val();
-  console.log(loginEmail);
-  console.log(loginPassword);
   $.ajax({
     type: 'POST',
     url: "/session",
@@ -29,7 +27,9 @@ var login = function(){
     },
     success: function(){
       $.get('/current_user', function(data){
-      console.log(data);
+      name = data.name;
+      $('body').append('<div>').append(name);
+      loginForm.remove();
       });
     }
   });
