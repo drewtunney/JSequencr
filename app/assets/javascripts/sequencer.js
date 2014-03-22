@@ -7,8 +7,8 @@ var songIsPlaying = false;
 
 // Looping function
 function gridCycle(){
-  var columnCount = $("div.column").length;
-  $("div.column").children().removeClass("in-time");
+  var columnCount = $("div.sequencer-column").length;
+  $("div.sequencer-column").children().removeClass("in-time");
   if (intervalCounter > columnCount - 1) {
     intervalCounter = 0;
   }

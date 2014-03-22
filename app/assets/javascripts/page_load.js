@@ -4,7 +4,7 @@ function settupDOM(){
   var songLength = 8;
   var suiteWrapper = $("suite-wrapper");
   for (var col = 0; col < songLength; col++) {
-    $('.suite-wrapper').append($("<div class='column' id='column"+ col+ "'>"));
+    $('.suite-wrapper').append($("<div class='sequencer-column' id='column"+ col+ "'>"));
   }
 
   var row = 0;

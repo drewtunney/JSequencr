@@ -33,6 +33,10 @@
   float: left;
 }
 
+.sequencer-column {
+  float: left;
+}
+
 .note {
   width: 5em;
   height: 5em;
