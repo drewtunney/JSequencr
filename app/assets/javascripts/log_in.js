@@ -1,4 +1,4 @@
-var loginForm = $("<form>").attr('id', 'login');
+var loginForm = $("<form>").attr('id', 'log-in');
 var logoutButton = $("<button id='log-out'>").text("log out");
 
 $('#nav-bar').append(loginForm);
@@ -18,17 +18,20 @@ $("#nav-bar").append(logoutButton);
 var login = function(){
   var loginEmail = loginEmailSpace.val();
   var loginPassword = loginPasswordSpace.val();
-  console.log(userEmail);
+  console.log(loginEmail);
+  console.log(loginPassword);
   $.ajax({
     type: 'POST',
     url: "/session",
     data: {
       'email': loginEmail,
       'password': loginPassword,
+    },
+    success: function(){
+      $.get('/current_user', function(data){
+      console.log(data);
+      });
     }
-  });
-  $.get('/current_user', function(data){
-    console.log(data);
   });
 };
 
@@ -52,7 +55,7 @@ var logout = function(){
 };
 
 
-$("#login").on("submit", function(e){
+$("#log-in").on("submit", function(e){
   e.preventDefault();
   login();
 });

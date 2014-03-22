@@ -42,7 +42,8 @@ var newUser = function(){
   // console.log(data);
 };
 
-$("sign-up").on("submit", function(e){
+$("#sign-up").on("submit", function(e){
   e.preventDefault();
+  console.log("hello");
   newUser();
 });
