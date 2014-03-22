@@ -181,10 +181,6 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-<<<<<<< HEAD
-=======
-    websocket (1.0.7)
->>>>>>> 5151011817c4f89f734e802291b0992debba4f37
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -193,13 +189,9 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk-core
-<<<<<<< HEAD
-  capybara
-=======
   bcrypt-ruby (~> 3.1.2)
   capybara
   capybara-webkit
->>>>>>> 5151011817c4f89f734e802291b0992debba4f37
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   ffaker (~> 1.2.0)

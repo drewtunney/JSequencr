@@ -3,7 +3,7 @@ var signUpForm = $("<form>").attr('id', 'sign-up').appendTo(loginDiv);
 
 
 
-$('#login').append(signUpForm);
+$('#nav-bar').append(signUpForm);
 
 $("<label>").text("Name:").appendTo(signUpForm);
 var nameSpace = $("<input id='name' name='name'>").appendTo(signUpForm);
