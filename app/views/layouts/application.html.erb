@@ -6,10 +6,22 @@
   
   <%= csrf_meta_tags %>
 </head>
+<header id="nav-bar">
+
+
+</header>
 <body>
 
 <%= yield %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <%= current_user %>
+<script type="text/javascript">
+  createUserForm();
+  createLoginForm();
+  if(<%= logged_in? %>){
+    loginForm.remove();
+    signUpForm.remove();
+  };
+</script>
 </body>
 </html>
