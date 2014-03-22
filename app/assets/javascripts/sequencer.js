@@ -54,6 +54,7 @@ function gridCycle(){
 
 // THIS SHOULDNT BE AN EACH BUT IS CLOSE TO WORKING
 function playSelectedNotes() {
+  // change "notes" to select both loop-timer and selected and then play the sounds associated
   var notes = $(".loop-timer");
   $.each(notes, function(i, note){
     // TODO hard coding fileName and index for testing

@@ -3,14 +3,12 @@ var bufferLoader;
 
 //We will try to consolidate the sound sources in to one object, we just need the values from the object to be in the array so we may pass it when initializing the new BufferLoader
 
-var soundsToPlay = {};
-
-var soundURLs = [
-  'https://s3.amazonaws.com/Sounds/snare_2.wav',
-  'https://s3.amazonaws.com/Sounds/cow_bell.wav',
-  'https://s3.amazonaws.com/Sounds/conga.wav',
-  'https://s3.amazonaws.com/Sounds/hand_clap.wav'
-];
+var soundURLs = {
+  "snare_2": 'https://s3.amazonaws.com/Sounds/snare_2.wav',
+  "cow_bell": 'https://s3.amazonaws.com/Sounds/cow_bell.wav',
+  "conga": 'https://s3.amazonaws.com/Sounds/conga.wav',
+  "hand_clap": 'https://s3.amazonaws.com/Sounds/hand_clap.wav'
+};
 
 //Page Initialize
 window.addEventListener('load', init, false);
@@ -34,21 +32,22 @@ function init() {
 }
 
 //the index we are getting still corresponds to the position in the array, ideally we would like to avoid this
-function playSound(soundSource, fileName, index) {
-  soundSource[fileName] = context.createBufferSource();
-  soundSource[fileName].buffer = bufferLoader.bufferList[index];
-  soundSource[fileName].connect(context.destination);
-
-  soundSource[fileName].start(0); // play the source now
+function playSound(key) {
+  var playedSounds = {};
+  playedSounds[key] = context.createBufferSource();
+  playedSounds[key].buffer = bufferLoader.bufferList[key];
+  playedSounds[key].connect(context.destination);
+  playedSounds[key].start(0); // play the source now
 }
 
 //this is an example function and not utilized
 function finishedLoading(bufferList) {
-  $.each(fileNames, function(index, fileName){
-    soundURLs[index] = context.createBufferSource();
-    soundURLs[index].buffer = bufferLoader.bufferList[0];
-    soundURLs[index].connect(context.destination);
-  });
+  console.log("sounds loaded");
+  // $.each(fileNames, function(index, fileName){
+  //   soundURLs[index] = context.createBufferSource();
+  //   soundURLs[index].buffer = bufferLoader.bufferList[0];
+  //   soundURLs[index].connect(context.destination);
+  // });
 }
 
   // Create two sources and play them both together.
