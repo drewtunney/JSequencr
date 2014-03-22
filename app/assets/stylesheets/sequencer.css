@@ -1,52 +1,62 @@
-   .sequencer-wrapper {
-    position: relative;
-    display: block;
-    margin: 1em;
-  }
+/*SWEET STYLIN'*/
 
-  .sound-selection {
-    width: 15%;
-    float: left;
-  }
+.sequencer-wrapper {
+  position: absolute;
+  display: block;
+  width: 200%;
+  margin: 1em;
+}
 
-  .row {
-    margin-bottom: 6em;
-  }
+.sound-selection {
+  display: inline;
+  width: 1em;
+  float: left;
+}
 
-  .suite-wrapper {
-    width: 200%;
-    float: left;
-  }
+.row {
+  margin-bottom: 6em;
+}
 
-  .column {
-    float: left;
-    background-color: gray;
-  }
+.suite-wrapper {
+  display: inline;
+  width: 200%;
+  float: left;
+  background-color: orange;
+}
 
-  .note {
-    width: 5em;
-    height: 5em;
-    display: block;
-    background-color: red;
-    border: .25em solid black;
-    border-radius: 1em;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+.drop-down {
+  display: block;
+  margin-bottom: 6em;
+}
 
-  .selected {
-    background-color: blue;
-  }
+.column {
+  float: left;
+}
 
-  .in-time {
-    background-color: green;
-  }
+.note {
+  width: 5em;
+  height: 5em;
+  display: block;
+  background-color: red;
+  border: .25em solid black;
+  border-radius: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-  .selected.in-time {
-    background-color: rgb(3,61,3);
-  }
+.selected {
+  background-color: blue;
+}
+
+.in-time {
+  background-color: green;
+}
+
+.selected.in-time {
+  background-color: rgb(3,61,3);
+}
 
 
 

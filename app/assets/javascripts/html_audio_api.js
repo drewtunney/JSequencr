@@ -1,3 +1,5 @@
+//HTML AUDIO API SETTUP
+
 var context;
 var bufferLoader;
 
