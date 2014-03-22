@@ -1,6 +1,6 @@
 var loginForm = $("<form>").attr('id', 'login');
 
-$('#login').append(loginForm);
+$('#nav-bar').append(loginForm);
 
 $("<label>").text("Email:").appendTo(loginForm);
 var loginEmailSpace = $("<input id='email' name='email'>").appendTo(loginForm);
