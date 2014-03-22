@@ -5,18 +5,20 @@ class SessionController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
+    
 
     if user && (user.authenticate(params[:password]) ) 
       
       session[:user_id] = user.id
-      
+      # binding.pry
       # redirect_to( user_path(user) ) 
     else
       flash[:login_error] = "Sorry, we don't have that combo"
+      # binding.pry
       # redirect_to login_path
     end
     # binding.pry
-    render json: session
+    render json: user
   end
 
   def destroy
