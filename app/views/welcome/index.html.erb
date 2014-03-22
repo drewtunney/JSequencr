@@ -1,3 +1,5 @@
+<header id="login"></header>
+
 <h1>Let's Get Weird</h1>
 
 <button id="start-timer">Start Timer</button>
@@ -7,6 +9,20 @@
 <script>
   window.fileNames = <%= raw(@sounds.to_json) %>
 </script>
+
+<form id="tempo">
+  <input name="BPM"
+         type="number"
+         min="20"
+         max="240"
+         step="1"
+         value="120">
+  <input type="submit" value="Set BPM">
+</form>
+
+<%= @buckets %>
+<br>
+>>>>>>> 5151011817c4f89f734e802291b0992debba4f37
 
 <div class="sequencer-wrapper">
 <div class="sound-selection">
@@ -46,4 +62,7 @@
     <div class="note"></div>
   </div>
 </div>
+<<<<<<< HEAD
 </div>
+=======
+>>>>>>> 5151011817c4f89f734e802291b0992debba4f37
