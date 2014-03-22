@@ -5,14 +5,16 @@
   }
 
   .sound-selection {
-    display: inline-block;
-    width: 10%;
+    width: 15%;
     float: left;
   }
 
+  .row {
+    margin-bottom: 6em;
+  }
+
   .suite-wrapper {
-    display: inline;
-    width: 30em;
+    width: 200%
     float: left;
   }
 

@@ -7,9 +7,9 @@ $.each(fileNames, function( index, value) {
 
 
 // get value of selected row sound 
-$('.row1').on('change', function() {
-  var soundSelection = $('.row1').val();
-  console.log(soundSelection)
+$("select").on('change', function() {
+  var soundSelection = $(this).val();
+  console.log(soundSelection);
 });
 
 
