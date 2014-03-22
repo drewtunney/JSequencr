@@ -12,10 +12,10 @@ $("<label>").text("Email:").appendTo(signUpForm);
 var emailSpace = $("<input id='email' name='email'>").appendTo(signUpForm);
 
 $("<label>").text("Password:").appendTo(signUpForm);
-var passwordSpace = $("<input id='password'>").appendTo(signUpForm);
+var passwordSpace = $("<input id='password'type='password'>").appendTo(signUpForm);
 
 $("<label>").text("Confirm Password:").appendTo(signUpForm);
-var passwordConfirmationSpace = $("<input id='password_confirmation'>").appendTo(signUpForm);
+var passwordConfirmationSpace = $("<input id='password_confirmation'type='password'>").appendTo(signUpForm);
 
 $("<button id='submit'>").appendTo(signUpForm).text('Sign up');
 
