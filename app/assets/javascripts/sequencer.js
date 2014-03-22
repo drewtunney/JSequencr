@@ -22,7 +22,7 @@ function gridCycle(){
 function playSelectedNotes() {
   var notesToPlay = $(".in-time.selected"); //all selected and in-time notes 
   $.each(notesToPlay, function(i, note){
-    var soundToPlay = $(note).data("sound"); //
+    var soundToPlay = $(note).attr("data-sound"); //
     playSound(soundToPlay);
   });
 }
