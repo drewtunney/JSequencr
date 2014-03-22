@@ -21,7 +21,7 @@ class SessionController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    render json: current_user
   end
 
   def current_user_return
