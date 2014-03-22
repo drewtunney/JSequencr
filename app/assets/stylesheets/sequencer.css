@@ -14,7 +14,7 @@
   }
 
   .suite-wrapper {
-    width: 200%
+    width: 200%;
     float: left;
   }
 
@@ -30,17 +30,21 @@
     background-color: red;
     border: .25em solid black;
     border-radius: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .selected {
     background-color: blue;
   }
 
-  .loop-timer {
+  .in-time {
     background-color: green;
   }
 
-  .selected.loop-timer {
+  .selected.in-time {
     background-color: rgb(3,61,3);
   }
 

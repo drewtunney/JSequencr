@@ -1,35 +1,33 @@
 var intervalID;
 var intervalCounter = 0;
-var intervalCounter = 1;
 var BPM = 120;
-
-
-//create a transpose function
-function transpose(array) {
-  return Object.keys(array[0]).map(
-    function (column) {
-      return array.map(function (row) { return row[column]; }); }
-  );
-}
+var songIsPlaying = false;
 
 //Event listeners
-$("div.note").on("click", function(){
-  $(this).toggleClass("selected");
-});
-$("button#start-timer").on('click', function(){
-  intervalID = window.setInterval(gridCycle, bpmToBeatVal(BPM));
-});
-$("button#pause-timer").on('click', function(){
-  clearInterval(intervalID);
-});
-$("button#reset-timer").on('click', function(){
-  intervalCounter = 1;
-  gridCycle();
-});
-$("#tempo").on("submit", function(e) {
-  e.preventDefault();
-  BPM = parseInt($(this).find("input[type=number]").val(), 10);
-}); // end on submit
+function triggerEventListeners(){
+  $("div.note").on("click", function(){
+    $(this).toggleClass("selected");
+  });
+  $("button#start-pause-timer").on('click', function(){
+    if (songIsPlaying) {
+      songIsPlaying = false;
+      clearInterval(intervalID);
+      $(this).text("Start Timer");
+    } else {
+      songIsPlaying = true;
+      intervalID = window.setInterval(gridCycle, bpmToBeatVal(BPM));
+      $(this).text("Pause Timer");
+    }
+  });
+  $("button#reset-timer").on('click', function(){
+    intervalCounter = 0;
+    gridCycle();
+  });
+  $("#tempo").on("submit", function(e) {
+    e.preventDefault();
+    BPM = parseInt($(this).find("input[type=number]").val(), 10);
+  }); // end on submit
+}
 
 
 // Set the tempo
@@ -42,32 +40,24 @@ function bpmToBeatVal(BPM) {
 // Cycling through the grid
 function gridCycle(){
   var columnCount = $("div.column").length;
-  $("div.column").children().removeClass("loop-timer");
+  $("div.column").children().removeClass("in-time");
   if (intervalCounter > columnCount - 1) {
     intervalCounter = 0;
   }
   // console.log(intervalCounter);
-  $("div#column" + intervalCounter).children().toggleClass("loop-timer");
+  $("div#column" + intervalCounter).children().toggleClass("in-time");
   playSelectedNotes();
   intervalCounter++;
 }
 
 // THIS SHOULDNT BE AN EACH BUT IS CLOSE TO WORKING
 function playSelectedNotes() {
-  // change "notes" to select both loop-timer and selected and then play the sounds associated
-  var notes = $(".loop-timer");
-  $.each(notes, function(i, note){
-    // TODO hard coding fileName and index for testing
-    var fileName = "drum.wav";
-    var index = 0;
-    var playNote = $(note).hasClass("selected");
-    if (playNote === true) {
-      playSound(soundsToPlay, fileName, index);
-    }
+  var notesToPlay = $(".in-time.selected"); //all selected and in-time notes 
+  $.each(notesToPlay, function(i, note){
+    var soundToPlay = $(note).data("sound"); //
+    playSound(soundToPlay);
   });
 }
-
-
 
 
 

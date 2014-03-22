@@ -13,4 +13,5 @@ function settupDOM(){
       $("#column" + i).append($("<div class='note' data-sound="+ key + ">"));
     }
   }
+  triggerEventListeners();
 }
