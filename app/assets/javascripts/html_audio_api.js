@@ -5,16 +5,7 @@ var bufferLoader;
 
 //We will try to consolidate the sound sources in to one object, we just need the values from the object to be in the array so we may pass it when initializing the new BufferLoader
 
-var soundURLs = fileNames;
 
-// {
-//   "snare_2": 'https://s3.amazonaws.com/Sounds/snare_2.wav',
-//   "cow_bell": 'https://s3.amazonaws.com/Sounds/cow_bell.wav',
-//   "conga": 'https://s3.amazonaws.com/Sounds/conga.wav',
-//   "hand_clap": 'https://s3.amazonaws.com/Sounds/hand_clap.wav'
-// };
-
-//Page Initialize
 window.addEventListener('load', init, false);
 
 function init() {
