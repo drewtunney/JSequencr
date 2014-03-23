@@ -11,10 +11,10 @@
 
 </header>
 <body>
-
+<%= current_user %>
 <%= yield %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<%= current_user %>
+
 <script type="text/javascript">
   createUserForm();
   createLoginForm();
