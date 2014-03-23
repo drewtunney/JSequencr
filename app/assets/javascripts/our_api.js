@@ -28,9 +28,9 @@ function triggerEventListeners(){
 
 // Set the tempo
 function bpmToBeatVal(BPM) {
-  BPS = BPM/60.0;
-  beatVal = 1.0/BPS;
-  return (1000 * beatVal);
+  BPS = 60.0/BPM;
+  eightNotes = BPS/2; //make eights notes!
+  return (1000 * eightNotes);
 }
 
 //DOM Manipulation
