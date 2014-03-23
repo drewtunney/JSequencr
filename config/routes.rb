@@ -10,4 +10,6 @@ JSequencr::Application.routes.draw do
 
   get "/current_user", to: "session#current_user_return"
 
+  resources :sound_patterns, only: [:create]
+
 end

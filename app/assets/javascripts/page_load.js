@@ -21,5 +21,5 @@ function settupDOM(){
   triggerEventListeners();
   selectSoundOfRow();
   getSoundsFromServer();
-
+  saver()
 }
