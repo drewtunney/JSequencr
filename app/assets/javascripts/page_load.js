@@ -20,4 +20,6 @@ function settupDOM(){
   addSoundsToDropDown();
   triggerEventListeners();
   selectSoundOfRow();
+  getSoundsFromServer();
+
 }

@@ -20,9 +20,9 @@ module AwsHelper
     s3 = Aws::S3.new
     s3 = Aws.s3
     resp = s3.list_objects(bucket: 'Sounds')
-    songs = []
+    songs = {}
     resp.contents.each do |song|
-      songs << song.key
+      songs[(song.key).downcase.split(".")[0]] = "https://s3.amazonaws.com/Sounds/#{song.key}"
     end
 
     songs

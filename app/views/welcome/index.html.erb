@@ -6,7 +6,7 @@
 <button id="reset-timer">Reset Timer</button>
 
 <script>
-  window.fileNames = <%= raw(@sounds.to_json) %>
+  window.soundURLs = <%= raw(@sounds.to_json) %>
 </script>
 
 <form id="tempo">
@@ -29,4 +29,5 @@
   </div>
 
 </div>
+
 
