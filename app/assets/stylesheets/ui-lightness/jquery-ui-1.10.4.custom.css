@@ -6,6 +6,10 @@
 
 /* Layout helpers
 ----------------------------------*/
+#slider a{
+  border-radius: 1em;
+}
+
 .ui-helper-hidden {
   display: none;
 }
@@ -114,6 +118,7 @@
 
 .ui-slider-horizontal {
   height: .8em;
+  width: 25%;
 }
 .ui-slider-horizontal .ui-slider-handle {
   top: -.3em;

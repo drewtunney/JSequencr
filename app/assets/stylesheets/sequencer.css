@@ -8,6 +8,10 @@ body {
   position: relative;
 }
 
+.page-header {
+  margin-bottom: 3em;
+}
+
 h1, h3 {
   color: #79BD9A;
   letter-spacing: .07em;

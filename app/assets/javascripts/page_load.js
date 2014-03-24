@@ -1,7 +1,6 @@
 // DOM SETTUP
 
 function settupDOM(){
-  // settupSequencer();
   listSoundChoices();
   triggerEventListeners();
   saver();
