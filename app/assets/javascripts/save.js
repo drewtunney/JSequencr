@@ -1,7 +1,8 @@
 
 //TODO add current user check before saving
 function saver() {
-  $("#save").on('click', function() { 
+  $("#save").on('submit', function(e) {
+    e.preventDefault();
     //saveSong(user_id)
     saveSong(currentUserId);
 
@@ -14,7 +15,7 @@ function saver() {
 function saveRows() {
   var rows = $("div.sequencer-column").length;
   for(var i=0; i < rows; i++){
-  saveSoundPattern(i)
+  saveSoundPattern(i);
   }
 }
 
@@ -24,10 +25,10 @@ function saveSong(user_id) {
   if (songId > 0) {
     console.log("Song with id " + songId + "exists");
     clearTracks();
-    saveRows()
+    saveRows();
   } else {
     $.post(
-      "/songs", 
+      "/songs",
       {user_id: currentUserId, bpm: BPM, title: $("#song-title").val()},
       function(response) {songId = response.id; response1 = response; saveRows()}
       );
@@ -39,13 +40,13 @@ function clearTracks() {
   $.ajax({
     type: "DELETE",
     url: "/clear_tracks/" + songId,
-  })
+  });
 }
 
 function saveSoundPattern(row) {
   $.post("/sound_patterns", getSoundPatternData(row), function() {
     console.log("saved");
-  })
+  });
 }
 
 function getSoundPatternData(row) {
@@ -59,8 +60,8 @@ function getSoundPatternData(row) {
       pattern += 1;
     } else {
       pattern += 0;
-    };
-  })
+    }
+  });
 
 
   return {file_name: fileName, pattern: pattern, song_id: songId};

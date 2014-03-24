@@ -10,6 +10,9 @@ window.addEventListener('load', init, false);
 
 function init() {
   try {
+      // getCurrentUser();
+      //first we see if anyone is logged in
+
     // Fix up for prefixing
     window.AudioContext = window.AudioContext||window.webkitAudioContext;
     context = new AudioContext();
