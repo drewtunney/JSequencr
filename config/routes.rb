@@ -12,4 +12,6 @@ JSequencr::Application.routes.draw do
 
   resources :sound_patterns, only: [:create]
 
+  resources :songs, only: [:create, :show]
+
 end

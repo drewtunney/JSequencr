@@ -37,6 +37,7 @@ var newUser = function(){
     success: function(){
       loginForm.remove();
       signUpForm.remove();
+      currentUserId = data.id;
     }
   });
   // console.log(data);
