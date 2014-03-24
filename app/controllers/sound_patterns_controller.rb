@@ -7,6 +7,6 @@ class SoundPatternsController < ApplicationController
 private
 
   def sound_pattern_params
-    params.permit(:pattern, :file_name)
+    params.permit(:pattern, :file_name, :song_id)
   end
 end
