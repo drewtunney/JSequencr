@@ -5,7 +5,7 @@ var isBoardSettup = false;
 
 //Event listeners
 function triggerEventListeners(){
-  $("div.note").on("click", function(){
+  $("body").on("click", "div.note", function(){
     $(this).toggleClass("selected");
   });
   $("button#start-pause-timer").on('click', function(){
@@ -22,8 +22,8 @@ function triggerEventListeners(){
   $("button#reset-timer").on('click', function(){
     intervalCounter = 0;
     gridCycle();
-  }); 
-  $('#BPM').html("BPM: " + BPM);  
+  });
+  $('#BPM').html("BPM: " + BPM);
   $("body").on("click", "h3", function(){
     $(".page-overlay").css("display", "block");
     rowUserWantsToChange = $(this).attr("name");
@@ -32,13 +32,14 @@ function triggerEventListeners(){
   $(".exit-button").on("click", function(){
     $(".page-overlay").css("display", "none");
   });
-  $(".add-row").on("click", function(){
-    createNewRow();
-    //add corresponding event listeners to li's
+  $("body").on("click", ".add-row", function(){
+    $(".page-overlay").css("display", "block");
+    setOverlayEventListenersFromPlus();
   });
 }
 
 function setOverlayEventListenersFromH3(){
+  $(".sound-choices").off();
   $(".sound-choices").on("click", function(){  //user is clicking on overlay to change a row's sound
     var soundSelection = $(this).text();
     var rowNumber = rowUserWantsToChange;  //The var rowUserWantsToChange is stored globally, and updated when the user clicks a the soundTitle of a row to change
@@ -51,23 +52,30 @@ function setOverlayEventListenersFromH3(){
 }
 
 function setOverlayEventListenersFromPlus(){
+  $(".sound-choices").off();
   $(".sound-choices").on("click", function(){
+    var newNote;
+    var newSoundTitle;
     var rowCount = $("h3.sound-title").length;
     var newSound = $(this).text();
     var columnCount = $(".sequencer-column").length;
     var allColumns = $(".sequencer-column");
-    if ( columnCount > 0) {  //if there are existing columns add a the new notes to each column
+    if ( rowCount > 0) {  //if there are existing columns add a the new notes to each column
       $.each(allColumns, function(index, column){
-        column.append(newNote);
+        newNote = $("<div>").addClass("note row" + rowCount).attr("data-sound", newSound);
+        $(column).append(newNote);
       });
+      newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
+      $(newSoundTitle).appendTo("#drop-column");
     } else {  //create the same number of columns determined by the songLength variable and add the notes to the columns
       for (var i = 0; i < songLength; i++){
-        var newNote = $("<div>").addClass("note row" + rowCount).attr("data-sound", newSound);
+        newNote = $("<div>").addClass("note row" + rowCount).attr("data-sound", newSound);
         $('.suite-wrapper').append($("<div class='sequencer-column' id='column"+ i + "'>").append(newNote));
       }
-      var newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
+        newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
       $(newSoundTitle).appendTo("#drop-column");
     }
+    $(".page-overlay").css("display", "none");
   });
 }
 
@@ -108,10 +116,6 @@ function settupSequencer() {
     }
     rowCounter++;
   }
-}
-
-function createNewRow() {
-  $(".page-overlay").css("display", "block");
 }
 
   // list sound choices on the left of the sequencer

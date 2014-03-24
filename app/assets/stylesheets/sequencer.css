@@ -4,6 +4,10 @@ body {
   background-color: #0B486B;
 }
 
+.page-wrapper {
+  position: relative;
+}
+
 h1, h3 {
   color: #79BD9A;
   letter-spacing: .07em;
@@ -86,6 +90,9 @@ li {
   text-align: center;
   line-height: 1em; 
   padding-bottom: .1em;
+  margin-top: 2.5em;
+  margin-left: .5em;
+  position: absolute;
 }
 
 .sequencer-wrapper {
@@ -93,6 +100,7 @@ li {
   display: block;
   width: 200%;
   margin: 1em;
+  position: absolute;
 }
 
 .sound-selection {
@@ -109,6 +117,7 @@ li {
   width: 200%;
   float: left;
   background-color: #0B486B;
+  margin: 1em;
 }
 
 .sound-title {
@@ -149,6 +158,11 @@ li {
 
 .selected.in-time {
   background-color: #BD4D40;
+}
+
+footer {
+  position: fixed;
+  bottom: 3em;
 }
 
 
