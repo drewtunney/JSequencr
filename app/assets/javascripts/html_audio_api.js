@@ -16,8 +16,9 @@ function init() {
 
     // needs souldURL - how can we make this more dynamic? load after we get a return from aws? 
 
-    bufferLoader = new BufferLoader(context, soundURLs);
+    bufferLoader = new BufferLoader(context, soundURLs, finishedLoading);
     bufferLoader.load();
+    settupDOM();
     //We need to initialize the notes with data-sound info reflecting the url suffix so that we may query it when we want to play the sound
   }
   catch(e) {
@@ -32,4 +33,8 @@ function playSound(key) {
   playedSounds[key].buffer = bufferLoader.bufferList[key];
   playedSounds[key].connect(context.destination);
   playedSounds[key].start(0); // play the source now
+}
+
+function finishedLoading(bufferList) {
+  console.log("sounds loaded");
 }

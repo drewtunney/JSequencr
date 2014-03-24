@@ -26,7 +26,6 @@ BufferLoader.prototype.loadBuffer = function(url, key) { //changed index to key
         loader.bufferList[key] = buffer;  //refactored the bufferList AudioBuffers to be a hash
         if (++loader.loadCount === Object.keys(loader.bufferList).length)
           loader.onload(loader.bufferList);
-          settupDOM();
       },
       function(error) {
         console.error('decodeAudioData error', error);
