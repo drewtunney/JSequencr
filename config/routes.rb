@@ -14,6 +14,6 @@ JSequencr::Application.routes.draw do
 
   resources :songs, only: [:create, :show]
 
-  delete "clear_tracks/id", to: "songs#clear_tracks"
+  delete "clear_tracks/:id", to: "songs#clear_tracks"
 
 end

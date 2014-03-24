@@ -8,27 +8,31 @@ function saver() {
 
     //loop through all rows
     //savePattern(row, song_id);
-    var rows = $("div.sequencer-column").length;
-    for(var i=0; i < rows; i++){
-      saveSoundPattern(i)
-    }
   });
 }
+
+function saveRows() {
+  var rows = $("div.sequencer-column").length;
+  for(var i=0; i < rows; i++){
+  saveSoundPattern(i)
+  }
+}
+
 
 function saveSong(user_id) {
   //if there is a song do nothing, otherwise, create one and save id to variable
   if (songId > 0) {
     console.log("Song with id " + songId + "exists");
     clearTracks();
+    saveRows()
   } else {
     $.post(
       "/songs", 
       {user_id: currentUserId, bpm: BPM, title: $("#song-title").val()},
-      function(response) {songId = response.id;}
+      function(response) {songId = response.id; response1 = response; saveRows()}
       );
-
   }
-  
+  //saveRows();
     //to create song, pass name and current_user
   //.post()
 }
