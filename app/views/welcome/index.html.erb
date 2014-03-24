@@ -24,8 +24,13 @@
   <input type="submit" value="Set BPM">
 </form> -->
 
-<%= @buckets %>
-<br>
+<div class="save-song">
+  <form>
+    <label>Song Name</label>
+    <input id="song-title"></input>
+    <button name='save' id 'save'>Save</button>
+  </form>
+</div>
 
 <div class="sequencer-wrapper">
   <div class="suite-wrapper">
@@ -34,10 +39,3 @@
 </div>
 <div class="add-row">+</div>
 
-<footer>
-  <form>
-    <label>Song Name</label>
-    <input id="song-title"></input>
-    <input type='submit' name='save' id='save'></input>
-  </form>
-</footer>

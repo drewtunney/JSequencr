@@ -21,6 +21,7 @@ input {
   border-radius: .2em;
   margin-left: .5em;
   margin-right: 1em;
+  width: 8em;
 }
 
 form {
@@ -32,7 +33,7 @@ button {
   border: none;
   color: white;
   background-color: gray;
-  padding: .5em;
+  padding: .5em 1em;
   border-radius: .5em;
   font-weight: 200;
   margin-left: 1em;
@@ -160,9 +161,8 @@ li {
   background-color: #BD4D40;
 }
 
-footer {
-  position: fixed;
-  bottom: 3em;
+.save-song {
+float: left;
 }
 
 
