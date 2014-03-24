@@ -1,3 +1,5 @@
+
+//TODO add current user check before saving
 function saver() {
   $("#save").on('click', function() { 
     //saveSong(user_id)
@@ -11,7 +13,18 @@ function saver() {
 }
 
 function saveSong(user_id) {
-  //get song by its id, and if there is none then post 
+  //if there is a song do nothing, otherwise, create one and save id to variable
+  if (songId > 0) {
+    console.log("Song with id " + songId + "exists");
+  } else {
+    $.post(
+      "/songs", 
+      {user_id: currentUserId, bpm: BPM, title: $("#song-title").val()},
+      function(response) {songId = response.id;}
+      );
+
+  }
+  
     //to create song, pass name and current_user
   //.post()
 }
