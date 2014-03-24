@@ -5,6 +5,24 @@ var intervalCounter = 0;
 var BPM = 120;
 var songIsPlaying = false;
 
+
+// Create slider (i.e. slider setter)
+$( "#slider" ).slider({
+  min: 20,
+  max: 240,
+  value: BPM,
+  slide: function(event, ui) {
+    BPM = $('#slider').slider('option', 'value');
+    $('#display').html("BPM: " + BPM);
+  }
+});
+
+// Slider getter methods
+// $( ".slider" ).on( "slide", function( event, ui ) {
+//   BPM = $('#slider').slider('option', 'value');
+// } );
+
+
 // Looping function
 function gridCycle(){
   var columnCount = $("div.sequencer-column").length;

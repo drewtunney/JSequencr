@@ -21,8 +21,8 @@ function init() {
 
     bufferLoader = new BufferLoader(context, soundURLs, finishedLoading);
     bufferLoader.load();
-    //We need to initialize the notes with data-sound info reflecting the url suffix so that we may query it when we want to play the sound
     settupDOM();
+    //We need to initialize the notes with data-sound info reflecting the url suffix so that we may query it when we want to play the sound
   }
   catch(e) {
     console.log(e);
@@ -38,29 +38,6 @@ function playSound(key) {
   playedSounds[key].start(0); // play the source now
 }
 
-//this is an example function and not utilized
 function finishedLoading(bufferList) {
   console.log("sounds loaded");
-  // $.each(fileNames, function(index, fileName){
-  //   soundURLs[index] = context.createBufferSource();
-  //   soundURLs[index].buffer = bufferLoader.bufferList[0];
-  //   soundURLs[index].connect(context.destination);
-  // });
 }
-
-  // Create two sources and play them both together.
-  // soundSources[0] = context.createBufferSource();
-  // soundSources[1] = context.createBufferSource();
-  // soundSources[2] = context.createBufferSource();
-  // soundSources[3] = context.createBufferSource();
-  // soundSources[0].buffer = bufferList[0];
-  // soundSources[1].buffer = bufferList[1];
-  // soundSources[2].buffer = bufferList[2];
-  // soundSources[3].buffer = bufferList[3];
-
-
-  // soundSources[0].connect(context.destination);
-  // soundSources[1].connect(context.destination);
-  // soundSources[2].connect(context.destination);
-  // soundSources[3].connect(context.destination);
-// }

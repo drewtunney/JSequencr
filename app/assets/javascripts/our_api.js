@@ -20,11 +20,8 @@ function triggerEventListeners(){
   $("button#reset-timer").on('click', function(){
     intervalCounter = 0;
     gridCycle();
-  });
-  $("#tempo").on("submit", function(e) {
-    e.preventDefault();
-    BPM = parseInt($(this).find("input[type=number]").val(), 10);
-  }); // end on submit
+  }); 
+  $('#display').html("BPM: " + BPM);  
   $("h3").on("click", function(){
     $(".page-overlay").css("display", "block");
     rowUserWantsToChange = $(this).attr("name");
@@ -40,6 +37,12 @@ function bpmToBeatVal(BPM) {
   eightNotes = BPS/2; //make eights notes!
   return (1000 * eightNotes);
 }
+
+// Display BPM
+function displayBPM() {
+
+}
+
 
 //DOM Manipulation
 

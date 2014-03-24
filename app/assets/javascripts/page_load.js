@@ -4,7 +4,6 @@ function settupDOM(){
 
   settupSequencer();
   triggerEventListeners();
-
   selectSoundOfRow();
   getSoundsFromServer();
   saver();

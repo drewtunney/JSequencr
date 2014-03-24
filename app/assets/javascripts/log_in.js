@@ -61,7 +61,6 @@ var logout = function(){
 
 var loginSubmit = function(){
   $("#log-in-form").on("submit", function(e){
-    console.log("i'm trying to submit");
     e.preventDefault();
     login();
   });
