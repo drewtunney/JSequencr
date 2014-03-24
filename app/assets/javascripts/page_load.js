@@ -1,11 +1,8 @@
 // DOM SETTUP
 
 function settupDOM(){
-
-  settupSequencer();
+  listSoundChoices();
   triggerEventListeners();
-  selectSoundOfRow();
-  getSoundsFromServer();
   saver();
   songId = 0; //this means there is no song saved already
   var currentUserId = 0;

@@ -6,21 +6,21 @@
 
   <!-- For the JQuery UI Slider -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-<!--    // <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="page-overlay">
-    <div class="exit-button">X</div>
-    <div class="all-sounds">
-      <ul></ul>
+  <div class="page-wrapper">
+    <div class="page-overlay">
+      <div class="exit-button">X</div>
+      <div class="all-sounds">
+        <ul></ul>
+      </div>
     </div>
+    <header id="nav-bar"></header>
+    <%= current_user %>
+    <%= yield %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </div>
-  <header id="nav-bar"></header>
-  <%= current_user %>
-  <%= yield %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-
   <script type="text/javascript">
     if(<%= logged_in? %>){
       // removeSignupForm();
