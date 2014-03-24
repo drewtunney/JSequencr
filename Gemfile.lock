@@ -96,6 +96,7 @@ GEM
     multi_xml (0.5.5)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    normalize-rails (3.0)
     pg (0.17.1)
     phantomjs (1.9.7.0)
     polyglot (0.3.4)
@@ -200,6 +201,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy
+  normalize-rails
   pg
   pry-rails
   rails (= 4.0.3)
