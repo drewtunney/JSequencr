@@ -1,5 +1,45 @@
 /*SWEET STYLIN'*/
 
+
+.page-overlay {
+  z-index: 10;
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0,0,0,.7);
+}
+
+.exit-button {
+  float: left;
+  width: 2em;
+  height: 2em;
+  background-color: red;
+  border-radius: .5em;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  line-height: 2em;
+  cursor: pointer;
+}
+
+.all-sounds {
+  width: 60%;
+  height: 75%;
+  margin: 5em auto;
+  background-color: white;
+  border-radius: 1em;
+  border: 1em solid blue;
+  overflow: scroll;
+}
+
+li {
+  list-style-type: none;
+  line-height: 2em;
+  font-size: 2em;
+  cursor: pointer;
+}
+
 .sequencer-wrapper {
   position: absolute;
   display: block;
@@ -14,7 +54,6 @@
 }
 
 .row {
-  margin-bottom: 6em;
 }
 
 .suite-wrapper {
@@ -24,9 +63,11 @@
   background-color: orange;
 }
 
-.drop-down {
+.sound-title {
   display: block;
-  margin-bottom: 6em;
+  margin-bottom: 3.55em;
+  margin-top: 0em;
+  cursor: pointer;
 }
 
 .column {
