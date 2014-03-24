@@ -1,5 +1,6 @@
 //THIS PROJECT'S API
 var rowUserWantsToChange;
+var songLength = 8;
 
 //Event listeners
 function triggerEventListeners(){
@@ -48,7 +49,8 @@ function displayBPM() {
 
 //Create dropdowns & creates rows
 function settupSequencer() {
-  var songLength = 8;
+  $(".suite-wrapper").children(".sequencer-column").remove();
+  $(".suite-wrapper").children("#drop-column").children().remove();
   var suiteWrapper = $("suite-wrapper");
   for (var col = 0; col < songLength; col++) {
     $('.suite-wrapper').append($("<div class='sequencer-column' id='column"+ col+ "'>"));
