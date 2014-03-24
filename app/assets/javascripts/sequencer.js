@@ -13,7 +13,7 @@ $( "#slider" ).slider({
   value: BPM,
   slide: function(event, ui) {
     BPM = $('#slider').slider('option', 'value');
-    $('#BPM').html("BPM: " + BPM);
+    $('#display').html("BPM: " + BPM);
   }
 });
 
