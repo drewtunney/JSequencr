@@ -3,8 +3,11 @@
 function settupDOM(){
   settupSequencer();
   triggerEventListeners();
-  listSoundChoices();
-  // selectSoundOfRow();
-  // getSoundsFromServer();
 
+  selectSoundOfRow();
+  getSoundsFromServer();
+  saver()
+  songId = 0; //this means there is no song saved already
+
+  listSoundChoices();
 }

@@ -28,6 +28,7 @@ var login = function(){
     success: function(){
       $.get('/current_user', function(data){
       var name = data.name;
+      currentUserId = data.id;
       $('body').append('<div>').append(name);
       loginForm.remove();
       signUpForm.remove();

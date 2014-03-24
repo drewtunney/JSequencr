@@ -1,0 +1,1 @@
+//      currentUserId = null;
