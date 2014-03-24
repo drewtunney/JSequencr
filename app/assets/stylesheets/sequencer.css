@@ -77,6 +77,17 @@ li {
   cursor: pointer;
 }
 
+.add-row {
+  color: white;
+  font-size: 3em;
+  border: .1em solid white;
+  width: 1em;
+  border-radius: 1em;
+  text-align: center;
+  line-height: 1em; 
+  padding-bottom: .1em;
+}
+
 .sequencer-wrapper {
   position: absolute;
   display: block;
