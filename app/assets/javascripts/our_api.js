@@ -20,10 +20,11 @@ function triggerEventListeners(){
     intervalCounter = 0;
     gridCycle();
   });
-  $("#tempo").on("submit", function(e) {
-    e.preventDefault();
-    BPM = parseInt($(this).find("input[type=number]").val(), 10);
-  }); // end on submit
+  // FIXME This listener doesn't actually do anything
+  $('#BPM').html("BPM: " + BPM);  
+  // $("#slider").on("change", function() {
+  //   BPM = parseInt($(this).find("input[type=range]").val(), 10);
+  // }); // end on submit
 }
 
 // Set the tempo
@@ -32,6 +33,12 @@ function bpmToBeatVal(BPM) {
   eightNotes = BPS/2; //make eights notes!
   return (1000 * eightNotes);
 }
+
+// Display BPM
+function displayBPM() {
+
+}
+
 
 //DOM Manipulation
 function addSoundsToDropDown() {

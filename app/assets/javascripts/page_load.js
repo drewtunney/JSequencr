@@ -21,5 +21,9 @@ function settupDOM(){
   triggerEventListeners();
   selectSoundOfRow();
   getSoundsFromServer();
+  displayBPM();
 
 }
+
+
+// TODO add trigger for putting BPM: 120 below slider

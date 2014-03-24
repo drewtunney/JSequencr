@@ -9,7 +9,12 @@
   window.soundURLs = <%= raw(@sounds.to_json) %>
 </script>
 
-<form id="tempo">
+<!-- Tentatively commenting this out to implement JQueryUI plugin below -->
+
+<div id="slider"></div>
+<div id="BPM"></div>
+
+<!-- <form id="tempo">
   <input name="BPM"
          type="number"
          min="20"
@@ -17,7 +22,7 @@
          step="1"
          value="120">
   <input type="submit" value="Set BPM">
-</form>
+</form> -->
 
 <%= @buckets %>
 <br>
