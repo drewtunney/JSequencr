@@ -15,5 +15,6 @@ JSequencr::Application.routes.draw do
   resources :songs, only: [:create, :show]
 
   delete "clear_tracks/:id", to: "songs#clear_tracks"
+  get "sound_patterns_of_song/:id", to: "songs#all_my_sound_patterns"
 
 end
