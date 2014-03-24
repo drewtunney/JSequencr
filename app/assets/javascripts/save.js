@@ -32,9 +32,6 @@ function saveSong(user_id) {
       function(response) {songId = response.id; response1 = response; saveRows()}
       );
   }
-  //saveRows();
-    //to create song, pass name and current_user
-  //.post()
 }
 
   //delete previous sound patterns with song_id
