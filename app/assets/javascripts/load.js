@@ -8,3 +8,22 @@ function loadSong(loadSongId) {
   //set url list hash equal to array results from that ajax call
   //populate board
 }
+
+function loadedBpm(){
+  return loadedSong.responseJSON.bpm
+}
+
+function loadedTitle(){
+  return loadedSong.responseJSON.title
+}
+
+function loadedPatternsArray(){
+  var patternObjects = loadedSoundPatterns.responseJSON;
+  var patternArray = [];
+
+  for (var i = 0; i < patternObjects.length; i++) {
+    patternArray.push(patternObjects[i].pattern);
+  };
+
+  return patternArray;
+}
