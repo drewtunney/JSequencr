@@ -69,6 +69,9 @@ end
 
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+# Normalization of CSS
+gem 'normalize-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
