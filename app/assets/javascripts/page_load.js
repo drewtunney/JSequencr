@@ -6,6 +6,10 @@ function settupDOM(){
 
   selectSoundOfRow();
   getSoundsFromServer();
+  displayBPM();
+}
+
+
   saver()
   songId = 0; //this means there is no song saved already
 
