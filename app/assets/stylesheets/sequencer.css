@@ -1,5 +1,10 @@
 /*SWEET STYLIN'*/
-
+h3 {
+  color: #79BD9A;
+  letter-spacing: .07em;
+  font-weight: 100;
+  margin-left: .4em;
+}
 
 .page-overlay {
   z-index: 10;
@@ -60,7 +65,7 @@ li {
   display: inline;
   width: 200%;
   float: left;
-  background-color: orange;
+  background-color: #0B486B;
 }
 
 .sound-title {
@@ -82,7 +87,7 @@ li {
   width: 5em;
   height: 5em;
   display: block;
-  background-color: red;
+  background-color: #3B8686;
   border: .25em solid black;
   border-radius: 1em;
   -webkit-user-select: none;
@@ -92,15 +97,15 @@ li {
 }
 
 .selected {
-  background-color: blue;
+  background-color: #703832;
 }
 
 .in-time {
-  background-color: green;
+  background-color: #A8DBA8;
 }
 
 .selected.in-time {
-  background-color: rgb(3,61,3);
+  background-color: #BD4D40;
 }
 
 
