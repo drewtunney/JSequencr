@@ -23,11 +23,8 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
   <script type="text/javascript">
-    createUserForm();
-    createLoginForm();
     if(<%= logged_in? %>){
-      loginForm.remove();
-      signUpForm.remove();
+      // removeSignupForm();
     };
   </script>
 </body>
