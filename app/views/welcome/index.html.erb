@@ -1,29 +1,30 @@
 <form id="sign-up-form">
-<label>Name:</label>
-<input id="signup-name">
-<label>Email:</label>
-<input id="signup-email" type="email" />
-<label>Password:</label>
-<input id="signup-password" type="password" />
-<label>Password Confirmation:</label>
-<input id="signup-password-confirmation" type="password" />
-<button id="sign-up" class="submit">Sign up</button>
+  <label>Name:</label>
+  <input id="signup-name">
+  <label>Email:</label>
+  <input id="signup-email" type="email" />
+  <label>Password:</label>
+  <input id="signup-password" type="password" />
+  <label>Password Confirmation:</label>
+  <input id="signup-password-confirmation" type="password" />
+  <button id="sign-up" class="submit">Sign up</button>
 </form>
 
 <form id="log-in-form">
-<label>Email:</label>
-<input id="login-email" type="email" />
-<label>Password:</label>
-<input id="login-password" type="password" />
-<button id="log-in" class="submit">Log in</button>
+  <label>Email:</label>
+  <input id="login-email" type="email" />
+  <label>Password:</label>
+  <input id="login-password" type="password" />
+  <button id="log-in" class="submit">Log in</button>
 </form>
 
 <button id='log-out' class="submit">Log Out</button>
 
-<h1>Let's Get Weird</h1>
-
-<button id="start-pause-timer">Start</button>
-<button id="reset-timer">Stop</button>
+<div class="page-header">
+  <h1>Let's Get Weird</h1>
+  <button id="start-pause-timer">Start Timer</button>
+  <button id="reset-timer">Reset Timer</button>
+</div>
 
 <script>
   window.soundURLs = <%= raw(@sounds.to_json) %>
@@ -36,20 +37,18 @@
   <div id="display"></div>
 </section>
 
-<%= @buckets %>
-<br>
-
-<div class="sequencer-wrapper">
-
-  <div class="suite-wrapper">
-    <div class="column" id="drop-column">
-  </div>
-
+<div class="save-song">
+  <form>
+    <label>Song Name</label>
+    <input id="song-title"></input>
+    <button name='save' id 'save'>Save</button>
+  </form>
 </div>
 
-<form>
-  <label>Song Name</label>
-  <input id="song-title"></input>
-  <input type='submit' name='save' id='save'></input>
-</form>
+<div class="sequencer-wrapper">
+  <div class="suite-wrapper">
+    <div class="column" id="drop-column"></div>
+  </div>
+</div>
+<div class="add-row">+</div>
 
