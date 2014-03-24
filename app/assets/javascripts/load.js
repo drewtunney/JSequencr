@@ -27,3 +27,14 @@ function loadedPatternsArray(){
 
   return patternArray;
 }
+
+function loadedPatternsHash(){
+  var patternObjects = loadedSoundPatterns.responseJSON;
+  var patternHash = {};
+
+  for (var i = 0; i < patternObjects.length; i++) {
+    patternHash[patternObjects[i].file_name] = patternObjects[i].pattern;
+  };
+
+  return patternHash;
+}
