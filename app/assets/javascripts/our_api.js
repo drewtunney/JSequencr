@@ -21,7 +21,7 @@ function triggerEventListeners(){
     intervalCounter = 0;
     gridCycle();
   }); 
-  $('#BPM').html("BPM: " + BPM);  
+  $('#display').html("BPM: " + BPM);  
   $("h3").on("click", function(){
     $(".page-overlay").css("display", "block");
     rowUserWantsToChange = $(this).attr("name");

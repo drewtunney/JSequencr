@@ -2,27 +2,17 @@
 
 <h1>Let's Get Weird</h1>
 
-<button id="start-pause-timer">Start Timer</button>
-<button id="reset-timer">Reset Timer</button>
+<button id="start-pause-timer">Start</button>
+<button id="reset-timer">Stop</button>
 
 <script>
   window.soundURLs = <%= raw(@sounds.to_json) %>
 </script>
 
-<!-- Tentatively commenting this out to implement JQueryUI plugin below -->
-
-<div id="slider"></div>
-<div id="BPM"></div>
-
-<!-- <form id="tempo">
-  <input name="BPM"
-         type="number"
-         min="20"
-         max="240"
-         step="1"
-         value="120">
-  <input type="submit" value="Set BPM">
-</form> -->
+<section id="BPM-controls">
+  <div id="slider"></div>
+  <div id="display"></div>
+</section>
 
 <%= @buckets %>
 <br>
