@@ -105,3 +105,13 @@ function showAuthLinks(){
 function addBadLoginAlert(message){
   alert(message || "Login attempt failed.");
 }
+
+// displays the overlay for the users songs
+function loadUserSongsListener() {
+  $(".list-songs").on("click", function() {
+    console.log("load clicked");
+    $("div ul li").remove();
+    $(".page-overlay").css("display", "block");
+    listUserSongs();
+  })
+}

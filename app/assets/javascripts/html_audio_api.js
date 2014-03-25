@@ -2,8 +2,10 @@
 var context;
 var bufferLoader;
 
+
 //Page Initialization
 function initializePage() {
+
   try {
     // Audio Context is defined
     window.AudioContext = window.AudioContext||window.webkitAudioContext;

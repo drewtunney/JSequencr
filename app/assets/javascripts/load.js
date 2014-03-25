@@ -1,10 +1,50 @@
+
+
+$("body").on("click", ".song-choices", function(){
+  $(".suite-wrapper").children(".sequencer-column").remove();
+  $(".suite-wrapper").children("#drop-column").children().remove();
+  var thisId = $(this).attr("data-song-id");
+  loadSong(thisId);
+  $("div ul li").remove();
+  $(".page-overlay").css("display", "none");
+  listSoundChoices();
+})
+
+$(".exit-button").on("click", function(){
+  $("div ul li").remove();
+  listSoundChoices();
+})
+
+function listUserSongs() {
+  userSongs = $.getJSON("/user/" + window.JSequencr.currentUserId + "/songs").done(
+    function(){
+      var songListLength = userSongs.responseJSON.length
+      for (var i = 0; i < songListLength; i++) {
+        var songId = userSongs.responseJSON[i].id;
+        var title =  userSongs.responseJSON[i].title;
+        $(".all-sounds ul").append($("<li>").append(title).addClass("song-choices").attr("data-song-id", songId));    
+      }
+    }
+  )
+}
+
+// function listSoundChoices() {
+//   $.each(Object.keys(soundURLs), function( index, url) {
+//     $(".all-sounds ul").append($("<li>").append(url).addClass("sound-choices"));
+//   });
+// }
+
+
 function loadSong(loadSongId) {
   //This will load a song
   //It uses the argument loadSongId
-  loadedSong = $.getJSON("/songs/" + loadSongId);
+  loadedSong = $.getJSON("/songs/" + loadSongId).done(
+    function(){
+      BPM = loadedSong.responseJSON.bpm;
+    });
   //It makes an ajax call to Song title and bpm
   //Then ajax call to get the sound_patterns
-  loadedSoundPatterns = $.getJSON("/sound_patterns_of_song/" + loadSongId);
+  loadedSoundPatterns = $.getJSON("/sound_patterns_of_song/" + loadSongId).done(loadRows);
   //set url list hash equal to array results from that ajax call
   //populate board
 }
