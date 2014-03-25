@@ -15,6 +15,12 @@ class SongsController < ApplicationController
     render json: Song.find(params[:id])
   end
 
+  def update
+    @song = Song.find(params[:id])
+    @song.update(update_params)
+    render json: @song
+  end
+
   def all_my_sound_patterns
     @song = Song.find(params[:id])
     render json: @song.sound_patterns
@@ -22,7 +28,11 @@ class SongsController < ApplicationController
 
   private
   def song_params
-    params.permit(:name, :user_id, :bpm, :title)
+    params.permit(:user_id, :bpm, :title)
+  end
+
+  def update_params
+    params.permit(:bpm, :title)
   end
 
 end
