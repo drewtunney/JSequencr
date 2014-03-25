@@ -1,18 +1,24 @@
 // DOM SETTUP
 
 function settupDOM(){
+<<<<<<< HEAD
+  settupSequencer();
+  triggerEventListeners();
+  getSoundsFromServer();
+=======
   listSoundChoices();
   triggerEventListeners();
+>>>>>>> 697e016e9936462bbbb50f448eed87e9690cd932
   saver();
+  
   songId = 0; //this means there is no song saved already
-  var currentUserId = 0;
-
-  // currentUserId = 0;
-  submitUpdatesLogin();
-  loggedIn();
-  updateLoginForm();
-
   listSoundChoices();
-  loginSubmit();
-  logoutSubmit();
+
+  JSequencr.currentUserId = parseInt(JSequencr.currentUserId) || 0;
+  
+  addSignUpSubmitEventListener();
+  // updateSignUpForm();
+  addLoginSubmitEventListener();
+  addLogoutSubmitEventListener();
+  updateLoginForm();
 }
