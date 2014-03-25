@@ -2,6 +2,7 @@
 
 //Global Variables
 var songLength = 8;
+var globalRowCounter = 0;
 
 //Behavior of overlay should be to edit the sound when overlay is initiated from a sound row's title
 function setOverlayEventListenersFromH3(rowUserWantsToChange){
@@ -33,21 +34,23 @@ function setOverlayEventListenersFromPlus(){
 
     if ( rowCount > 0) {  //if there are existing columns add a the new notes to each column
       $.each(allColumns, function(index, column){
-        newNote = $("<div>").addClass("note row" + rowCount).attr("data-sound", newSound);
+        newNote = $("<div>").addClass("note row" + globalRowCounter).attr("data-sound", newSound);
         $(column).append(newNote);
       });
-      newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
+      newSoundTitle = $("<h3>").addClass("sound-title").attr("name", globalRowCounter).text(newSound);
       $(newSoundTitle).appendTo("#drop-column");
-      $(includeX).attr("id", rowCount).appendTo("#drop-column");
+      $(includeX).attr("id", globalRowCounter).appendTo("#drop-column");
+      globalRowCounter++;
     } else {  //create the same number of columns determined by the songLength variable and add the notes to the columns
       
       for (var i = 0; i < songLength; i++){
-        newNote = $("<div>").addClass("note row" + rowCount).attr("data-sound", newSound);
+        newNote = $("<div>").addClass("note row" + globalRowCounter).attr("data-sound", newSound);
         $('.suite-wrapper').append($("<div class='sequencer-column' id='column"+ i + "'>").append(newNote));
       }
-        newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
+        newSoundTitle = $("<h3>").addClass("sound-title").attr("name", globalRowCounter).text(newSound);
       $(newSoundTitle).appendTo("#drop-column");
-      $(includeX).attr("id", rowCount).appendTo("#drop-column");
+      $(includeX).attr("id", globalRowCounter).appendTo("#drop-column");
+      globalRowCounter++;
     }
     $(".page-overlay").css("display", "none");
   });
