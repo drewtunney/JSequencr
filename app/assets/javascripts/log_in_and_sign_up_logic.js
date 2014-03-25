@@ -1,6 +1,22 @@
+//SIGNUP Functionality
+var newUser = function(name, email, password, password_confirmation){
+  $.ajax({
+    type: 'POST',
+    url: "/users",
+    data: {
+      'name': name,
+      'email': email,
+      'password': password,
+      'password_confirmation': password_confirmation}
+    }).done(function(data){
+      console.log(data.id);
+      JSequencr.currentUserId = data.id;
+      updateLoginForm();
+    });
+};
 
-
-var login = function(email, password){
+//LOGIN&LOGOUT functionality
+function login(email, password){
   $.ajax({
     type: 'POST',
     url: "/session",
@@ -23,9 +39,9 @@ var login = function(email, password){
     console.log("LOG IN ERROR");
     addBadLoginAlert();
   });
-};
+}
 
-var logout = function(){
+function logout(){
   $.ajax({
     type: 'DELETE',
     url: "/session",
@@ -38,62 +54,40 @@ var logout = function(){
   }).fail(function(){
     console.log("LOG OUT ERROR");
   });
-};
+}
 
-// functions to check if logged in and update page accordingly
-var loggedIn = function(){
+//Checking logged-in state
+function loggedIn(){
   if(JSequencr.currentUserId > 0){
     return true;
   } else {
     return false;
   }
-};
-var updateLoginForm = function(){
+}
 
-  // var hideSignUpForm = function(){
-  //   $("#sign-up-form").css('display', 'none');
-  // };
+//Visual styling related to logged-in state
+function updateLoginForm(){
 
-  // var showSignUpForm = function(){
-  //   $("#sign-up-form").css('display', 'block');
-  // };
-  var hideLoginForm = function(){
+  function hideLoginForm(){
     $("#log-in-form").css('display', 'none');
-  };
-  var showLoginForm = function(){
+  }
+  function showLoginForm(){
     $("#log-in-form").css('display', 'block');
-  };
-  var showLogoutButton = function(){
+    $("#log-in-form").effect("slide", 1000);
+  }
+  function showLogoutButton(){
     $("#log-out").css('display', 'block');
-  };
-  var hideLogoutButton = function(){
+  }
+  function hideLogoutButton(){
     $("#log-out").css('display', 'none');
-  };
+  }
   if(loggedIn()){
     hideLoginForm();
     hideSignUpForm();
     showLogoutButton();
+    hideAuthLinks();
   } else {
-    showLoginForm();
     hideLogoutButton();
-    showSignUpForm();
+    showAuthLinks();
   }
-};
-
-// event listeners to capture form submits
-var addLoginSubmitEventListener = function(){
-  $("#log-in-form").on("submit", function(e){
-    e.preventDefault();
-    login(e.currentTarget[0].value, e.currentTarget[1].value);
-  });
-};
-var addLogoutSubmitEventListener = function(){
-  $("#log-out").on("click", function(){
-    logout();
-  });
-};
-
-// alerts based on login
-var addBadLoginAlert = function(message){
-  alert(message || "Login attempt failed.");
-};
+}
