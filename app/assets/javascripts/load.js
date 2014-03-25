@@ -111,13 +111,10 @@ function loadRows(){
           };
           $('.suite-wrapper').append($("<div class='sequencer-column' id='column"+ i + "'>").append(newNote));
         }
-
       newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
       $(newSoundTitle).appendTo("#drop-column");
-      // includeX.attr("id", rowCount).appe
       $(includeX).attr("id", rowCount).appendTo("#drop-column");
     }
-
   }
 };
 
