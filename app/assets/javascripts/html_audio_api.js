@@ -1,35 +1,26 @@
 //HTML AUDIO API SETTUP
-
 var context;
 var bufferLoader;
 
-//We will try to consolidate the sound sources in to one object, we just need the values from the object to be in the array so we may pass it when initializing the new BufferLoader
-
-window.addEventListener('load', init, false);
-
-function init() {
+//Page Initialization
+function initializePage() {
   try {
-      // getCurrentUser();
-      //first we see if anyone is logged in
-
-    // Fix up for prefixing
+    // Audio Context is defined
     window.AudioContext = window.AudioContext||window.webkitAudioContext;
     context = new AudioContext();
 
-    // needs souldURL - how can we make this more dynamic? load after we get a return from aws? 
-
+    //Sounds are buffered
     bufferLoader = new BufferLoader(context, soundURLs, finishedLoading);
-    bufferLoader.load();
+    bufferLoader.load(); //ref. audio_buffer_loader.js for full functionality
     settupDOM();
     triggerEventListeners();
-    //We need to initialize the notes with data-sound info reflecting the url suffix so that we may query it when we want to play the sound
   }
   catch(e) {
     console.log(e);
   }
 }
 
-//the index we are getting still corresponds to the position in the array, ideally we would like to avoid this
+//User can play a sound by passing in a key that is included in the soundURL object
 function playSound(key) {
   var playedSounds = {};
   playedSounds[key] = context.createBufferSource();
@@ -38,6 +29,7 @@ function playSound(key) {
   playedSounds[key].start(0); // play the source now
 }
 
+//Function is called once sounds are buffered
 function finishedLoading(bufferList) {
   console.log("sounds loaded");
 }

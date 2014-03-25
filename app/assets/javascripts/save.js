@@ -1,15 +1,4 @@
-
 //TODO add current user check before saving
-
-
-function saver() {
-  $("#save").on('click', function(e) {
-    e.preventDefault();
-    currentUserId = window.JSequencr.currentUserId
-    saveSong(currentUserId);
-  });
-
-}
 
 function saveRows() {
   var rows = $("div.sequencer-column").length;
