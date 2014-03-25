@@ -36,6 +36,12 @@ function triggerEventListeners(){
     $(".page-overlay").css("display", "block");
     setOverlayEventListenersFromPlus();
   });
+  $(".auth-user h2#sign-up-link").on("click", function(){
+    showSignUpForm();
+  });
+  $(".auth-user h2#log-in-link").on("click", function(){
+    showLoginForm2();
+  });
 }
 
 function setOverlayEventListenersFromH3(){

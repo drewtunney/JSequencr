@@ -39,4 +39,5 @@ function playSound(key) {
 }
 
 function finishedLoading(bufferList) {
+  console.log("sounds loaded");
 }

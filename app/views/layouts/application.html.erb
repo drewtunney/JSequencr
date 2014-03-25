@@ -23,6 +23,7 @@
     <%= javascript_include_tag "http://cdn.craig.is/js/mousetrap/mousetrap.min.js?9d308" %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </div>
+
   <% if logged_in? %>
     <script type="text/javascript">
         JSequencr.currentUserId = <%= current_user.id %>;
