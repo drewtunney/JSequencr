@@ -1,8 +1,9 @@
 // DOM SETTUP
 
 function settupDOM(){
-  listSoundChoices();
+  //listSoundChoices();
   saver();
+  console.log("settupDOM was called");
   
   songId = 0; //this means there is no song saved already
   JSequencr.currentUserId = parseInt(JSequencr.currentUserId) || 0;
@@ -11,4 +12,5 @@ function settupDOM(){
   addLoginSubmitEventListener();
   addLogoutSubmitEventListener();
   updateLoginForm();
+  loadUserSongsListener();
 }

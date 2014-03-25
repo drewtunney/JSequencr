@@ -26,6 +26,11 @@ class SongsController < ApplicationController
     render json: @song.sound_patterns
   end
 
+  def show_user_songs
+    @songs = Song.where(user_id: params[:id])
+    render json: @songs
+  end
+
   private
   def song_params
     params.permit(:user_id, :bpm, :title)

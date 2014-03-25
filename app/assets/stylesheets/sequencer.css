@@ -185,5 +185,13 @@ li {
   bottom: 0;
 }
 
+.list-songs {
+  float: right;
+  color: white;
+  font-size: 2em;
+  padding-right: 2em;
+  border: 10px solid black;
+}
+
 
 

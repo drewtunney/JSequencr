@@ -6,7 +6,7 @@ var newUser = function(name, email, password, password_confirmation){
       'name': name,
       'email': email,
       'password': password,
-      'password_confirmation': password_confirmation}
+      'password_confirmation': password_confirmation }
     }).done(function(data){
       console.log(data.id);
       JSequencr.currentUserId = data.id;

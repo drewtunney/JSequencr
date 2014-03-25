@@ -1,3 +1,21 @@
+function loadUserSongsListener() {
+  $(".list-songs").on("click", function() {
+    console.log("load clicked");
+    $("div ul li").remove();
+    $(".page-overlay").css("display", "block");
+
+    listUserSongs();
+    //listSoundChoices();
+  })
+}
+
+
+function listUserSongs() {
+  console.log(window.JSequencr.currentUserId);
+  userSongs = $.getJSON("/user/" + window.JSequencr.currentUserId + "/songs");
+}
+
+
 function loadSong(loadSongId) {
   //This will load a song
   //It uses the argument loadSongId
