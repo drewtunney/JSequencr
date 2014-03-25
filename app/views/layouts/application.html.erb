@@ -3,6 +3,8 @@
 <head>
   <title>JSequencr</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <!-- For the JQuery UI Slider -->
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> -->
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -18,7 +20,6 @@
     <%= yield %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </div>
-<<<<<<< HEAD
   <header id="nav-bar"></header>
   
   <%= yield %>
@@ -29,12 +30,5 @@
         JSequencr.currentUserId = <%= current_user.id %>;
     </script>
   <% end %>
-=======
-  <script type="text/javascript">
-    if(<%= logged_in? %>){
-      // removeSignupForm();
-    };
-  </script>
->>>>>>> 697e016e9936462bbbb50f448eed87e9690cd932
 </body>
 </html>
