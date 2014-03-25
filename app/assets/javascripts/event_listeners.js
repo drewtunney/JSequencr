@@ -58,9 +58,11 @@ function triggerEventListeners(){
 function addSignUpSubmitEventListener(){
 $("#sign-up-form").on("submit", function(e){
   e.preventDefault();
+  console.log("i have been submitted");
   console.log(e);
   newUser(e.currentTarget[0].value, e.currentTarget[1].value, e.currentTarget[2].value, e.currentTarget[3].value);
-});
+  $("#sign-up-form")[0].reset();
+  });
 }
 
 function hideSignUpForm(){
@@ -82,6 +84,7 @@ function addLoginSubmitEventListener(){
   $("#log-in-form").on("submit", function(e){
     e.preventDefault();
     login(e.currentTarget[0].value, e.currentTarget[1].value);
+    $("#log-in-form")[0].reset();
   });
 }
 function addLogoutSubmitEventListener(){
