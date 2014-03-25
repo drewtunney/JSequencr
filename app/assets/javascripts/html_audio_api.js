@@ -5,8 +5,7 @@ var bufferLoader;
 
 //We will try to consolidate the sound sources in to one object, we just need the values from the object to be in the array so we may pass it when initializing the new BufferLoader
 
-
-// window.addEventListener('load', init, false);
+window.addEventListener('load', init, false);
 
 function init() {
   try {
@@ -21,8 +20,9 @@ function init() {
 
     bufferLoader = new BufferLoader(context, soundURLs, finishedLoading);
     bufferLoader.load();
+    settupDOM();
+    triggerEventListeners();
     //We need to initialize the notes with data-sound info reflecting the url suffix so that we may query it when we want to play the sound
-    console.log("initiated!");
   }
   catch(e) {
     console.log(e);
@@ -39,6 +39,4 @@ function playSound(key) {
 }
 
 function finishedLoading(bufferList) {
-  console.log("sounds loaded");
-  settupDOM();
 }
