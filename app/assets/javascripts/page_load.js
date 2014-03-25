@@ -1,7 +1,7 @@
 // DOM SETTUP
 
 function settupDOM(){
-  //listSoundChoices();
+  listSoundChoices();
   saver();
   console.log("settupDOM was called");
   

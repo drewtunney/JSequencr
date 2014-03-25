@@ -3,7 +3,6 @@ function loadUserSongsListener() {
     console.log("load clicked");
     $("div ul li").remove();
     $(".page-overlay").css("display", "block");
-
     listUserSongs();
     //listSoundChoices();
   })
@@ -11,9 +10,25 @@ function loadUserSongsListener() {
 
 
 function listUserSongs() {
-  console.log(window.JSequencr.currentUserId);
-  userSongs = $.getJSON("/user/" + window.JSequencr.currentUserId + "/songs");
+  userSongs = $.getJSON("/user/" + window.JSequencr.currentUserId + "/songs").done(
+    function(){
+      var songListLength = userSongs.responseJSON.length
+      for (var i = 0; i < songListLength; i++) {
+        var songId = userSongs.responseJSON[i].id;
+        var title =  userSongs.responseJSON[i].title;
+        console.log(songId);
+        console.log(title);
+        $(".all-sounds ul").append($("<li>").append(title).addClass("song-choices").attr("id", songId));    
+      }
+    }
+  )
 }
+
+// function listSoundChoices() {
+//   $.each(Object.keys(soundURLs), function( index, url) {
+//     $(".all-sounds ul").append($("<li>").append(url).addClass("sound-choices"));
+//   });
+// }
 
 
 function loadSong(loadSongId) {
