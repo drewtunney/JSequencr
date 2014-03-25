@@ -11,8 +11,15 @@ function loadUserSongsListener() {
 $("body").on("click", ".song-choices", function(){
   var thisId = $(this).attr("data-song-id");
   loadSong(thisId);
+  $("div ul li").remove();
+  $(".page-overlay").css("display", "none");
+  listSoundChoices();
 })
 
+$(".exit-button").on("click", function(){
+  $("div ul li").remove();
+  listSoundChoices();
+})
 
 function listUserSongs() {
   userSongs = $.getJSON("/user/" + window.JSequencr.currentUserId + "/songs").done(
