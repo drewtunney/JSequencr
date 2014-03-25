@@ -8,6 +8,11 @@ function loadUserSongsListener() {
   })
 }
 
+$("body").on("click", ".song-choices", function(){
+  var thisId = $(this).attr("data-song-id");
+  loadSong(thisId);
+})
+
 
 function listUserSongs() {
   userSongs = $.getJSON("/user/" + window.JSequencr.currentUserId + "/songs").done(
@@ -16,9 +21,7 @@ function listUserSongs() {
       for (var i = 0; i < songListLength; i++) {
         var songId = userSongs.responseJSON[i].id;
         var title =  userSongs.responseJSON[i].title;
-        console.log(songId);
-        console.log(title);
-        $(".all-sounds ul").append($("<li>").append(title).addClass("song-choices").attr("id", songId));    
+        $(".all-sounds ul").append($("<li>").append(title).addClass("song-choices").attr("data-song-id", songId));    
       }
     }
   )
@@ -37,7 +40,7 @@ function loadSong(loadSongId) {
   loadedSong = $.getJSON("/songs/" + loadSongId);
   //It makes an ajax call to Song title and bpm
   //Then ajax call to get the sound_patterns
-  loadedSoundPatterns = $.getJSON("/sound_patterns_of_song/" + loadSongId);
+  loadedSoundPatterns = $.getJSON("/sound_patterns_of_song/" + loadSongId).done(loadRows);
   //set url list hash equal to array results from that ajax call
   //populate board
 }
