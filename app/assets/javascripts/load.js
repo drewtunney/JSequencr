@@ -39,8 +39,9 @@ function loadSong(loadSongId) {
   //This will load a song
   //It uses the argument loadSongId
   loadedSong = $.getJSON("/songs/" + loadSongId).done(
-    function(){
+    function(response){
       BPM = loadedSong.responseJSON.bpm;
+      songId = response.id; 
     });
   //It makes an ajax call to Song title and bpm
   //Then ajax call to get the sound_patterns
