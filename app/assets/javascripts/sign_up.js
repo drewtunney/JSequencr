@@ -33,7 +33,12 @@ $("#sign-up-form").on("submit", function(e){
   };
 
   var showSignUpForm = function(){
-    $("#sign-up-form").effect("slide", 1000);
     $("#sign-up-form").css('display', 'block');
+    $("#sign-up-form").effect("slide", 1000);
+  };
+
+  var showLoginForm2 = function(){
+    $("#log-in-form").css('display', 'block');
+    $("#log-in-form").effect("slide", 1000);
   };
 // };

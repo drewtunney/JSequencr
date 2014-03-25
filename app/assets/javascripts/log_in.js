@@ -50,19 +50,12 @@ var loggedIn = function(){
 };
 var updateLoginForm = function(){
 
-  // var hideSignUpForm = function(){
-  //   $("#sign-up-form").css('display', 'none');
-  // };
-
-  // var showSignUpForm = function(){
-  //   $("#sign-up-form").css('display', 'block');
-  // };
   var hideLoginForm = function(){
     $("#log-in-form").css('display', 'none');
   };
   var showLoginForm = function(){
-    $("#log-in-form").effect("slide", 1000);
     $("#log-in-form").css('display', 'block');
+    $("#log-in-form").effect("slide", 1000);
   };
   var showLogoutButton = function(){
     $("#log-out").css('display', 'block');
@@ -74,10 +67,12 @@ var updateLoginForm = function(){
     hideLoginForm();
     hideSignUpForm();
     showLogoutButton();
+    hideAuthLinks();
   } else {
-    showLoginForm();
+    // showLoginForm();
     hideLogoutButton();
-    showSignUpForm();
+    showAuthLinks();
+    // showSignUpForm();
   }
 };
 
@@ -92,6 +87,14 @@ var addLogoutSubmitEventListener = function(){
   $("#log-out").on("click", function(){
     logout();
   });
+};
+
+var hideAuthLinks = function(){
+  $(".auth-user").css("display", "none");
+};
+
+var showAuthLinks = function(){
+  $(".auth-user").css("display", "inline");
 };
 
 // alerts based on login
