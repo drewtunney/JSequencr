@@ -31,16 +31,18 @@ function setOverlayEventListenersFromPlus(){
     var columnCount = $(".sequencer-column").length;
     var allColumns = $(".sequencer-column");
     var includeX = $("<p>").text("x").addClass("remove-row");
+    var lastRowNumber = $("h3.sound-title").last().attr("name");
 
     if ( rowCount > 0) {  //if there are existing columns add a the new notes to each column
       $.each(allColumns, function(index, column){
-        newNote = $("<div>").addClass("note row" + globalRowCounter).attr("data-sound", newSound);
+        newNote = $("<div>").addClass("note row" + (parseInt(lastRowNumber)+1)).attr("data-sound", newSound);
         $(column).append(newNote);
       });
-      newSoundTitle = $("<h3>").addClass("sound-title").attr("name", globalRowCounter).text(newSound);
+      newSoundTitle = $("<h3>").addClass("sound-title").attr("name", (parseInt(lastRowNumber)+1)).text(newSound);
       $(newSoundTitle).appendTo("#drop-column");
-      $(includeX).attr("id", globalRowCounter).appendTo("#drop-column");
+      $(includeX).attr("id", (parseInt(lastRowNumber)+1)).appendTo("#drop-column");
       globalRowCounter++;
+      console.log(lastRowNumber)
     } else {  //create the same number of columns determined by the songLength variable and add the notes to the columns
       
       for (var i = 0; i < songLength; i++){
