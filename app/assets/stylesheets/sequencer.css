@@ -155,12 +155,9 @@ li {
   float: left;
 }
 
-.row {
-}
-
 .suite-wrapper {
   display: inline;
-  width: 200%;
+  width: 100%;
   float: left;
   background-color: #0B486B;
   margin: 1em;
