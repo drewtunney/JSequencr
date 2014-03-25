@@ -17,6 +17,7 @@ $( "#slider" ).slider({
   }
 });
 
+
 // Slider getter methods
 $( ".slider" ).on( "slide", function( event, ui ) {
   BPM = $('#slider').slider('option', 'value');
