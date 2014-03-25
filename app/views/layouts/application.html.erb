@@ -6,6 +6,7 @@
   <!-- For the JQuery UI Slider -->
   <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> -->
   <%= csrf_meta_tags %>
+
 </head>
 <body>
   <div class="page-wrapper">
@@ -15,9 +16,11 @@
         <ul></ul>
       </div>
     </div>
+    <img src="http://i656.photobucket.com/albums/uu285/dixiepixie47/Disney%20Cartoons/Unicorn-psd31001.png" class="unicorn"/>
     <header id="nav-bar"></header>
     <%= current_user %>
     <%= yield %>
+    <%= javascript_include_tag "http://cdn.craig.is/js/mousetrap/mousetrap.min.js?9d308" %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </div>
 
