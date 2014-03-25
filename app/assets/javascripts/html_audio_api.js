@@ -6,7 +6,7 @@ var bufferLoader;
 //We will try to consolidate the sound sources in to one object, we just need the values from the object to be in the array so we may pass it when initializing the new BufferLoader
 
 
-// window.addEventListener('load', init, false);
+window.addEventListener('load', init, false);
 
 function init() {
   try {
