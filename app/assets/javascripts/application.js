@@ -16,3 +16,5 @@
 //= require_tree .
 
 var JSequencr = {};
+
+window.addEventListener('load', initializePage, false);

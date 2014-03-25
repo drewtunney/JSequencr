@@ -190,7 +190,6 @@ li {
   position: absolute;
   display: none;
   margin-top: 5em;
-  border: 1em solid black;
   z-index: 10;
 }
 

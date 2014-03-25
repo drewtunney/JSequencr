@@ -1,3 +1,0 @@
-function piano_listener() {
-  
-}
