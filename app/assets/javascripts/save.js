@@ -32,11 +32,11 @@ function saveSong(user_id) {
         //   songId = response.id; 
         //   response1 = response; 
         //   saveRows()};
+      }).done(function(){
+        clearTracks();
+        saveRows();    
       });
-
-    // console.log("Song with id " + songId + "exists");
-    // clearTracks();
-    // saveRows();
+    
   } else {
     $.post(
       "/songs",
