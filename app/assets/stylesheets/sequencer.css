@@ -12,6 +12,22 @@ body {
   margin-bottom: 3em;
 }
 
+.auth-user{
+  color: white;
+  cursor: pointer;
+  border: 1em solid pink;
+  display: inline;
+
+}
+
+ #log-in-form {
+  display: none;
+}
+#sign-up-form {
+  display: none;
+}
+
+
 h1, h3 {
   color: #79BD9A;
   letter-spacing: .07em;
@@ -174,7 +190,6 @@ li {
   position: absolute;
   display: none;
   margin-top: 5em;
-  border: 1em solid black;
   z-index: 10;
 }
 
