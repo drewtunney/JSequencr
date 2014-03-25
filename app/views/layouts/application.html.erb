@@ -18,10 +18,23 @@
     <%= yield %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </div>
+<<<<<<< HEAD
+  <header id="nav-bar"></header>
+  
+  <%= yield %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+  <% if logged_in? %>
+    <script type="text/javascript">
+        JSequencr.currentUserId = <%= current_user.id %>;
+    </script>
+  <% end %>
+=======
   <script type="text/javascript">
     if(<%= logged_in? %>){
       // removeSignupForm();
     };
   </script>
+>>>>>>> 697e016e9936462bbbb50f448eed87e9690cd932
 </body>
 </html>

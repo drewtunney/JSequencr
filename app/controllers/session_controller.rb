@@ -9,15 +9,16 @@ class SessionController < ApplicationController
     if user && (user.authenticate(params[:password]) ) 
       
       session[:user_id] = user.id
-      # binding.pry
-      # redirect_to( user_path(user) ) 
+      render json: user
     else
-      flash[:login_error] = "Sorry, we don't have that combo"
-      # binding.pry
-      # redirect_to login_path
+      if user.nil?
+        error = "User doesn't exist."
+      else
+        error = "Sorry, password authentication failed."
+      end
+      render json: { :errors => error }
     end
-    # binding.pry
-    render json: user
+    
   end
 
   def destroy

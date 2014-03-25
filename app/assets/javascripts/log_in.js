@@ -1,132 +1,99 @@
-  // var loginForm = $("#log-in");
-  // var logoutButton = $("#log-out");
-
-// var createLoginForm = function(){
-//   // var loginForm = $("#log-in");
-//   $('#nav-bar').append(loginForm);
-//   $("<label>").text("Email:").appendTo(loginForm);
-//   var loginEmailSpace = $("<input id='login-email' name='email'>").appendTo(loginForm);
-//   $("<label>").text("Password:").appendTo(loginForm);
-//   var loginPasswordSpace = $("<input id='login-password' type='password'>").appendTo(loginForm);
-//   $("<button id='log-in'>").appendTo(loginForm).text('Log In');
-//   $("#nav-bar").append(logoutButton);
-//   loginSubmit();
-//   logoutSubmit();
-// };
 
 
-var login = function(){
-  var loginEmail = $("input#login-email").val();
-  var loginPassword = $("input#login-password").val();
-  console.log(loginEmail);
+var login = function(email, password){
   $.ajax({
     type: 'POST',
     url: "/session",
-    data: {
-      'email': loginEmail,
-      'password': loginPassword,
-    },
-    success: function(){
-      $.get('/current_user', function(data){
-      var name = data.name || "";
-      currentUserId = data.id;
-      // $('body').append('<div>').append(name);
-      // loginForm.remove();
-      // signUpForm.remove();
-      });
-    }
+    data: {'email':    email,
+           'password': password}
+  }).done(function(data){
+      if(data.errors) {
+        console.log("LOG IN FAILED");
+        console.log(data);
+
+        addBadLoginAlert(data.errors);
+      } else {
+        console.log("LOGGED IN AS:");
+        console.log(data);
+
+        JSequencr.currentUserId = data.id;
+        updateLoginForm();
+      }
+  }).fail(function(){
+    console.log("LOG IN ERROR");
+    addBadLoginAlert();
   });
 };
 
-var id;
-
 var logout = function(){
-  // var logoutButton = $("#log-out");
-  console.log("i'm logging out");
-  $.get('/current_user', function(data){
-    id = data.id;
-  });
   $.ajax({
     type: 'DELETE',
     url: "/session",
-    data: {
-      'user_id': id
-    },
-    success: function(){
-      
-    }
-  });
-  console.log("hello");
-};
+    data: {'user_id': JSequencr.currentUserId}
+  }).done(function(){
+    console.log("LOGGED OUT");
 
-var loginSubmit = function(){
-  $("#log-in-form").on("submit", function(e){
-    e.preventDefault();
-    login();
+    JSequencr.currentUserId = 0;
+    updateLoginForm();
+  }).fail(function(){
+    console.log("LOG OUT ERROR");
   });
 };
 
-var logoutSubmit = function(){
-$("#log-out").on("click", function(){
-  console.log("I have pressed log out");
-  logout();
-  // createUserForm();
-  // createLoginForm();
-});
-};
-
-var hideLoginForm = function(){
-  $("#log-in-form").css('display', 'none');
-};
-
-var showLoginForm = function(){
-  $("#log-in-form").css('display', 'block');
-};
-
+// functions to check if logged in and update page accordingly
 var loggedIn = function(){
-  if(currentUserId > 0){
+  if(JSequencr.currentUserId > 0){
     return true;
   } else {
     return false;
   }
 };
-
-var showLogoutButton = function(){
-  $("#log-in").css('display', 'block');
-};
-
-var hideLogoutButton = function(){
-  $("#log-in").css('display', 'block');
-};
-
 var updateLoginForm = function(){
-  if(loggedIn){
+
+  // var hideSignUpForm = function(){
+  //   $("#sign-up-form").css('display', 'none');
+  // };
+
+  // var showSignUpForm = function(){
+  //   $("#sign-up-form").css('display', 'block');
+  // };
+  var hideLoginForm = function(){
+    $("#log-in-form").css('display', 'none');
+  };
+  var showLoginForm = function(){
+    $("#log-in-form").css('display', 'block');
+  };
+  var showLogoutButton = function(){
+    $("#log-out").css('display', 'block');
+  };
+  var hideLogoutButton = function(){
+    $("#log-out").css('display', 'none');
+  };
+  if(loggedIn()){
     hideLoginForm();
+    hideSignUpForm();
     showLogoutButton();
   } else {
     showLoginForm();
     hideLogoutButton();
+    showSignUpForm();
   }
 };
 
-var getCurrentUser = function(){
-  $.get('/current_user', function(data){
-    if (data !== null) {
-      currentUserId = data.id;
-    } else {
-      currentUserId = 0;
-    }
-
+// event listeners to capture form submits
+var addLoginSubmitEventListener = function(){
+  $("#log-in-form").on("submit", function(e){
+    e.preventDefault();
+    login(e.currentTarget[0].value, e.currentTarget[1].value);
   });
-  return currentUserId;
 };
-
-
-var submitUpdatesLogin = function(){
-$(".submit").on("click", function(){
-  updateLoginForm();
+var addLogoutSubmitEventListener = function(){
+  $("#log-out").on("click", function(){
+    logout();
   });
 };
 
-
-
+// alerts based on login
+var addBadLoginAlert = function(message){
+  alert(message || "Login attempt failed.");
+};
