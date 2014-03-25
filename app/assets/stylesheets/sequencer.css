@@ -2,6 +2,7 @@
 
 body {
   background-color: #0B486B;
+  font-family: "Bodoni MT";
 }
 
 .page-wrapper {
@@ -15,9 +16,15 @@ body {
 .auth-user{
   color: white;
   cursor: pointer;
-  border: 1em solid pink;
-  display: inline;
+  font-family: Helvetica;
+  border-bottom: .1em solid white;
 
+}
+.auth-user h2 {
+  margin-left: .5em;
+  line-height: 1.5em;
+  font-weight: 200;
+  display: inline;
 }
 
  #log-in-form {
@@ -27,12 +34,30 @@ body {
   display: none;
 }
 
+.bpm {
+  margin-left: 1em;
+  color:white;
+}
+
+div#slider a.ui-slider-handle {
+  border-radius: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: none;
+}
+
+div.ui-slider-horizontal {
+  height: .4em;
+}
 
 h1, h3 {
   color: #79BD9A;
   letter-spacing: .07em;
   margin-left: .4em;
   font-weight: 300;
+  font-family: Helvetica;
 }
 
 input {
@@ -68,6 +93,7 @@ label {
   display: none;
   width: 100%;
   height: 100%;
+  margin-top: -1.5em;
   position: fixed;
   background-color: rgba(0,0,0,.7);
 }
@@ -76,12 +102,13 @@ label {
   float: left;
   width: 2em;
   height: 2em;
-  background-color: red;
-  border-radius: .5em;
+  background-color: rgb(215, 47, 50);
+  border-radius: 2em;
   color: white;
   font-size: 2em;
   text-align: center;
   line-height: 2em;
+  margin: 1em .7em;
   cursor: pointer;
 }
 
@@ -89,10 +116,12 @@ label {
   width: 60%;
   height: 75%;
   margin: 5em auto;
-  background-color: white;
+  color: white;
+  background-color: #0B486B;
   border-radius: 1em;
-  border: 1em solid blue;
+  border: 1em solid rgb(131, 131, 151);
   overflow: scroll;
+  z-index: 20;
 }
 
 li {
@@ -104,16 +133,17 @@ li {
 
 .add-row {
   color: white;
-  font-size: 3em;
+  font-size: 3.2em;
   border: .1em solid white;
-  width: 1em;
+  width: 1.2em;
   border-radius: 1em;
   text-align: center;
-  line-height: 1em; 
-  padding-bottom: .1em;
+  line-height: 1em;
+  padding-bottom: .2em;
   margin-top: 2.5em;
   margin-left: .5em;
   position: absolute;
+  cursor: pointer;
 }
 
 .sequencer-wrapper {
