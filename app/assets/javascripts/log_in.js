@@ -8,7 +8,7 @@ var login = function(email, password){
       if(data.errors) {
         console.log("LOG IN FAILED");
         console.log(data);
-        
+
         addBadLoginAlert(data.errors);
       } else {
         console.log("LOGGED IN AS:");
@@ -84,4 +84,4 @@ var addLogoutSubmitEventListener = function(){
 // alerts based on login
 var addBadLoginAlert = function(message){
   alert(message || "Login attempt failed.");
-}
+};

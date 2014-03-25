@@ -1,38 +1,37 @@
-var newUser = function(){
-  var userName = $("input#signup-name").val();
-  var userEmail = $("input#signup-email").val();
-  var userPassword = $("input#signup-password").val();
-  var userPasswordConfirmation = $("input#signup-password-confirmation").val();
-  console.log(userName);
+var newUser = function(name, email, password, password_confirmation){
   $.ajax({
     type: 'POST',
     url: "/users",
     data: {
-      'name': userName,
-      'email': userEmail,
-      'password': userPassword,
-      'password_confirmation': userPasswordConfirmation
+      'name': name,
+      'email': email,
+      'password': password,
+      'password_confirmation': password_confirmation
     },
-    success: function(){
-      loginForm.remove();
-      signUpForm.remove();
-      currentUserId = data.id;
-    }
+    // success: function(){
+    //   loginForm.remove();
+    //   signUpForm.remove();
+    //   currentUserId = data.id;
+    // }
   });
   // console.log(data);
 };
-var signUpSubmit = function(){
+
+
+var addSignUpSubmitEventListener = function(){
 $("#sign-up-form").on("submit", function(e){
   e.preventDefault();
-  console.log("hello");
-  newUser();
+  console.log(e);
+  newUser(e.currentTarget[0].value, e.currentTarget[1].value, e.currentTarget[2].value, e.currentTarget[3].value);
 });
 };
 
-var removeSignupForm = function(){
-  $("#sign-up-form").css('display', 'none');
-};
+var updateSignUpForm = function(){
+  var hideSignupForm = function(){
+    $("#sign-up-form").css('display', 'none');
+  };
 
-var showSignupForm = function(){
-  $("#sign-up-form").css('display', 'block');
+  var showSignupForm = function(){
+    $("#sign-up-form").css('display', 'block');
+  };
 };
