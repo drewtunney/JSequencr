@@ -1,15 +1,14 @@
 
 //TODO add current user check before saving
+
+
 function saver() {
-  $("#save").on('submit', function(e) {
+  $("#save").on('click', function(e) {
     e.preventDefault();
-    //saveSong(user_id)
+    currentUserId = window.JSequencr.currentUserId
     saveSong(currentUserId);
-
-
-    //loop through all rows
-    //savePattern(row, song_id);
   });
+
 }
 
 function saveRows() {
@@ -22,16 +21,31 @@ function saveRows() {
 
 function saveSong(user_id) {
   //if there is a song do nothing, otherwise, create one and save id to variable
+  
   if (songId > 0) {
-    console.log("Song with id " + songId + "exists");
-    clearTracks();
-    saveRows();
+    $.ajax(
+      ("/songs/"+songId),
+      {
+        type: "PUT",
+        data: {bpm: BPM, title: $("#song-title").val()},
+        // function(response) {
+        //   songId = response.id; 
+        //   response1 = response; 
+        //   saveRows()};
+      }).done(function(){
+        clearTracks();
+        saveRows();    
+      });
+    
   } else {
     $.post(
       "/songs",
       {user_id: currentUserId, bpm: BPM, title: $("#song-title").val()},
-      function(response) {songId = response.id; response1 = response; saveRows()}
-      );
+      function(response) {
+        songId = response.id; 
+        response1 = response; 
+        saveRows()}
+      ).done(function() {alert("saved!")} );
   }
 }
 

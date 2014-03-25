@@ -166,6 +166,7 @@ li {
 }
 
 .save-song {
+
 /*float: left;*/
 }
 
@@ -179,6 +180,9 @@ li {
 
 .show-and-hide {
   display: block;
+  float: left;
+  position: fixed;
+  bottom: 0;
 }
 
 
