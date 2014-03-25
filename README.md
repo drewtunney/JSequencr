@@ -3,7 +3,6 @@
  by Grails DB
 
 ## purpose
-
 ****
 jSequencr is a sequencer/drum machine web app designed by Grails DB for General Assemb.ly's Web Development Immersive group project in March 2014. It utilizes the experimental HTML5 Web Audio API, and so is completely Flash-free. Users can compose beats and save them to their library of songs.
 
