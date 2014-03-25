@@ -20,10 +20,7 @@
     <%= yield %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </div>
-  <header id="nav-bar"></header>
-  
-  <%= yield %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
   <% if logged_in? %>
     <script type="text/javascript">
         JSequencr.currentUserId = <%= current_user.id %>;
