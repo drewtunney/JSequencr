@@ -6,16 +6,17 @@ var newUser = function(name, email, password, password_confirmation){
       'name': name,
       'email': email,
       'password': password,
-      'password_confirmation': password_confirmation
-    },
-    // success: function(){
-    //   loginForm.remove();
-    //   signUpForm.remove();
-    //   currentUserId = data.id;
-    // }
-  });
+      'password_confirmation': password_confirmation}
+    }).done(function(data){
+      console.log(data.id);
+      JSequencr.currentUserId = data.id;
+      // hideSignUpForm();
+      updateLoginForm();
+    });
   // console.log(data);
 };
+
+
 
 
 var addSignUpSubmitEventListener = function(){
@@ -26,12 +27,12 @@ $("#sign-up-form").on("submit", function(e){
 });
 };
 
-var updateSignUpForm = function(){
-  var hideSignupForm = function(){
+// var updateSignUpForm = function(){
+  var hideSignUpForm = function(){
     $("#sign-up-form").css('display', 'none');
   };
 
-  var showSignupForm = function(){
+  var showSignUpForm = function(){
     $("#sign-up-form").css('display', 'block');
   };
-};
+// };

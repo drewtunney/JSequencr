@@ -1,3 +1,5 @@
+
+
 var login = function(email, password){
   $.ajax({
     type: 'POST',
@@ -47,6 +49,14 @@ var loggedIn = function(){
   }
 };
 var updateLoginForm = function(){
+
+  // var hideSignUpForm = function(){
+  //   $("#sign-up-form").css('display', 'none');
+  // };
+
+  // var showSignUpForm = function(){
+  //   $("#sign-up-form").css('display', 'block');
+  // };
   var hideLoginForm = function(){
     $("#log-in-form").css('display', 'none');
   };
@@ -61,10 +71,12 @@ var updateLoginForm = function(){
   };
   if(loggedIn()){
     hideLoginForm();
+    hideSignUpForm();
     showLogoutButton();
   } else {
     showLoginForm();
     hideLogoutButton();
+    showSignUpForm();
   }
 };
 

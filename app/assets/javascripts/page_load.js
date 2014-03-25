@@ -12,7 +12,7 @@ function settupDOM(){
   JSequencr.currentUserId = parseInt(JSequencr.currentUserId) || 0;
   
   addSignUpSubmitEventListener();
-  updateSignUpForm();
+  // updateSignUpForm();
   addLoginSubmitEventListener();
   addLogoutSubmitEventListener();
   updateLoginForm();
