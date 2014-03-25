@@ -5,9 +5,12 @@ body {
   font-family: "Bodoni MT";
 }
 
+
+/*
+Quite certain this means nothing. 
 .page-wrapper {
   position: relative;
-}
+}*/
 
 .page-header {
   margin-bottom: 3em;
@@ -35,8 +38,17 @@ body {
 }
 
 .bpm {
-  margin-left: 1em;
   color:white;
+  display: block;
+}
+
+#slider, #display {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+#display {
+  font-size: 2em;
 }
 
 div#slider a.ui-slider-handle {
@@ -131,25 +143,8 @@ li {
   cursor: pointer;
 }
 
-.add-row {
-  color: white;
-  font-size: 3.2em;
-  border: .1em solid white;
-  width: 1.2em;
-  border-radius: 1em;
-  text-align: center;
-  line-height: 1em;
-  padding-bottom: .2em;
-  margin-top: 2.5em;
-  margin-left: .5em;
-  position: absolute;
-  cursor: pointer;
-}
-
 .sequencer-wrapper {
-  position: absolute;
   display: block;
-  width: 200%;
   margin: 1em;
   position: absolute;
 }
@@ -169,6 +164,21 @@ li {
   float: left;
   background-color: #0B486B;
   margin: 1em;
+}
+
+.add-row {
+  color: white;
+  font-size: 3.2em;
+  border: .1em solid white;
+  width: 1.2em;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1em;
+  padding-bottom: .2em;
+  margin-left: .25em;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
 }
 
 .sound-title {
@@ -211,11 +221,6 @@ li {
   background-color: #BD4D40;
 }
 
-.save-song {
-
-/*float: left;*/
-}
-
 .unicorn {
   position: absolute;
   display: none;
@@ -235,8 +240,6 @@ li {
   color: white;
   font-size: 2em;
   padding-right: 2em;
-  border: 10px solid black;
 }
-
 
 

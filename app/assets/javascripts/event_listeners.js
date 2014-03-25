@@ -22,7 +22,7 @@ function triggerEventListeners(){
     gridCycle();
   });
   //BPM is displayed
-  $('#display').html("BPM: " + BPM);
+  $('#display').html(BPM + " BPM");
   //Sound titles will display the page overlay on click
   $("body").on("click", "h3.sound-title", function(){
     $(".page-overlay").css("display", "block");
