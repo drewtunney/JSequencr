@@ -167,6 +167,8 @@ li {
 
 .save-song {
 float: left;
+position: fixed;
+bottom: 0;
 }
 
 

@@ -1,15 +1,15 @@
 
 //TODO add current user check before saving
+
+
 function saver() {
-  $("#save").on('submit', function(e) {
+  $("#save").on('click', function(e) {
     e.preventDefault();
-    //saveSong(user_id)
+    console.log("saver");
+    currentUserId = window.JSequencr.currentUserId
     saveSong(currentUserId);
-
-
-    //loop through all rows
-    //savePattern(row, song_id);
   });
+
 }
 
 function saveRows() {
