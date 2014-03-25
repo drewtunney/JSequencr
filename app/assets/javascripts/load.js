@@ -4,11 +4,12 @@ function loadUserSongsListener() {
     $("div ul li").remove();
     $(".page-overlay").css("display", "block");
     listUserSongs();
-    //listSoundChoices();
   })
 }
 
 $("body").on("click", ".song-choices", function(){
+  $(".suite-wrapper").children(".sequencer-column").remove();
+  $(".suite-wrapper").children("#drop-column").children().remove();
   var thisId = $(this).attr("data-song-id");
   loadSong(thisId);
   $("div ul li").remove();
