@@ -17,14 +17,14 @@
     </div>
   </div>
   <header id="nav-bar"></header>
-  <%= current_user %>
+  
   <%= yield %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
-  <script type="text/javascript">
-    if(<%= logged_in? %>){
-      // removeSignupForm();
-    };
-  </script>
+  <% if logged_in? %>
+    <script type="text/javascript">
+        JSequencr.currentUserId = <%= current_user.id %>;
+    </script>
+  <% end %>
 </body>
 </html>
