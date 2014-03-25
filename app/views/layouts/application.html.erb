@@ -3,11 +3,8 @@
 <head>
   <title>JSequencr</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-
   <!-- For the JQuery UI Slider -->
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-
-<!--    // <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> -->
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -23,10 +20,12 @@
     <%= yield %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </div>
-  <script type="text/javascript">
-    if(<%= logged_in? %>){
-      // removeSignupForm();
-    };
-  </script>
+  <% if logged_in? %>
+    <script type="text/javascript">
+        JSequencr.currentUserId = <%= current_user.id %>;
+    </script>
+
+  <% end %>
+  <script src="/path/to/mousetrap.min.js"></script>
 </body>
 </html>
