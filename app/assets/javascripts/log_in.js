@@ -61,6 +61,7 @@ var updateLoginForm = function(){
     $("#log-in-form").css('display', 'none');
   };
   var showLoginForm = function(){
+    $("#log-in-form").effect("slide", 1000);
     $("#log-in-form").css('display', 'block');
   };
   var showLogoutButton = function(){
