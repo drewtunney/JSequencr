@@ -38,8 +38,17 @@ Quite certain this means nothing.
 }
 
 .bpm {
-  margin-left: 1em;
   color:white;
+  display: block;
+}
+
+#slider, #display {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+#display {
+  font-size: 2em;
 }
 
 div#slider a.ui-slider-handle {
@@ -212,11 +221,6 @@ li {
   background-color: #BD4D40;
 }
 
-.save-song {
-
-/*float: left;*/
-}
-
 .unicorn {
   position: absolute;
   display: none;
@@ -236,7 +240,6 @@ li {
   color: white;
   font-size: 2em;
   padding-right: 2em;
-  border: 10px solid black;
 }
 
 

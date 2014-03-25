@@ -12,8 +12,8 @@ $( "#slider" ).slider({
   max: 240,
   value: BPM,
   slide: function(event, ui) {
-    BPM = $('#slider').slider('option', 'value');
-    $('#display').html("BPM: " + BPM);
+    BPM = $( '#slider' ).slider('option', 'value');
+    $( '#display' ).html(BPM + " BPM");
   }
 });
 
