@@ -64,10 +64,10 @@ var updateLoginForm = function(){
     $("#log-in-form").css('display', 'block');
   };
   var showLogoutButton = function(){
-    $("#log-in").css('display', 'block');
+    $("#log-out").css('display', 'block');
   };
   var hideLogoutButton = function(){
-    $("#log-in").css('display', 'block');
+    $("#log-out").css('display', 'none');
   };
   if(loggedIn()){
     hideLoginForm();
