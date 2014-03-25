@@ -20,34 +20,35 @@
 
 <button id='log-out' class="submit">Log Out</button>
 
-<h1>Let's Get Weird</h1>
-
-<button id="start-pause-timer">Start</button>
-<button id="reset-timer">Stop</button>
+<div class="page-header">
+  <h1>Let's Get Weird</h1>
+  <button id="start-pause-timer">Start Timer</button>
+  <button id="reset-timer">Reset Timer</button>
+</div>
 
 <script>
   window.soundURLs = <%= raw(@sounds.to_json) %>
 </script>
 
+<!-- Got to this URL for more information about styling the slider 
+  http://api.jqueryui.com/slider/ -->
 <section id="BPM-controls">
   <div id="slider"></div>
   <div id="display"></div>
 </section>
 
-<%= @buckets %>
-<br>
-
-<div class="sequencer-wrapper">
-
-  <div class="suite-wrapper">
-    <div class="column" id="drop-column">
-  </div>
-
+<div class="save-song">
+  <form>
+    <label>Song Name</label>
+    <input id="song-title"></input>
+    <button name='save' id 'save'>Save</button>
+  </form>
 </div>
 
-<form>
-  <label>Song Name</label>
-  <input id="song-title"></input>
-  <input type='submit' name='save' id='save'></input>
-</form>
+<div class="sequencer-wrapper">
+  <div class="suite-wrapper">
+    <div class="column" id="drop-column"></div>
+  </div>
+</div>
+<div class="add-row">+</div>
 
