@@ -1,4 +1,3 @@
-//TODO add current user check before saving
 
 function saveRows() {
   var rows = $("div.sequencer-column").length;
