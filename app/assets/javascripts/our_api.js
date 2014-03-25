@@ -29,6 +29,7 @@ function setOverlayEventListenersFromPlus(){
     var newSound = $(this).text();
     var columnCount = $(".sequencer-column").length;
     var allColumns = $(".sequencer-column");
+    var includeX = $("<p>").text("x").addClass("remove-row");
 
     if ( rowCount > 0) {  //if there are existing columns add a the new notes to each column
       $.each(allColumns, function(index, column){
@@ -37,6 +38,7 @@ function setOverlayEventListenersFromPlus(){
       });
       newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
       $(newSoundTitle).appendTo("#drop-column");
+      $(includeX).attr("id", rowCount).appendTo("#drop-column");
     } else {  //create the same number of columns determined by the songLength variable and add the notes to the columns
       
       for (var i = 0; i < songLength; i++){
@@ -45,7 +47,7 @@ function setOverlayEventListenersFromPlus(){
       }
         newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
       $(newSoundTitle).appendTo("#drop-column");
-
+      $(includeX).attr("id", rowCount).appendTo("#drop-column");
     }
     $(".page-overlay").css("display", "none");
   });

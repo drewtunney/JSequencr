@@ -52,6 +52,7 @@ function triggerEventListeners(){
     currentUserId = window.JSequencr.currentUserId;
     saveSong(currentUserId);
   });
+
 }
 
 //Sign up event Listeners
@@ -114,4 +115,12 @@ function loadUserSongsListener() {
     $(".page-overlay").css("display", "block");
     listUserSongs();
   })
-}
+};
+
+// when x is pressed
+function removeSoundRow() {
+  $("body").on("click", ".remove-row", function(){
+    rowNumber = $(this);
+    console.log(rowNumber);
+  })
+};

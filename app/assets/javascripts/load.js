@@ -88,6 +88,7 @@ function loadRows(){
     var newSoundTitle;
     var rowCount = $("h3.sound-title").length;
     var newSound = loadedSoundPatterns.responseJSON[j].file_name;
+    var includeX = $("<p>").text("x").addClass("remove-row");
 
     var allColumns = $(".sequencer-column");
     
@@ -101,6 +102,7 @@ function loadRows(){
       });
       newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
       $(newSoundTitle).appendTo("#drop-column");
+      $(includeX).attr("id", rowCount).appendTo("#drop-column");
     } else {  //create the same number of columns determined by the songLength variable and add the notes to the columns
         for (var i = 0; i < songLength; i++){
           newNote = $("<div>").addClass("note row" + rowCount).attr("data-sound", newSound);
@@ -112,6 +114,8 @@ function loadRows(){
 
       newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
       $(newSoundTitle).appendTo("#drop-column");
+      // includeX.attr("id", rowCount).appe
+      $(includeX).attr("id", rowCount).appendTo("#drop-column");
     }
 
   }
