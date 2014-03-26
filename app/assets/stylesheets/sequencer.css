@@ -69,7 +69,7 @@ h1, h3 {
   letter-spacing: .07em;
   margin-left: .4em;
   font-weight: 300;
-  font-family: Helvetica;
+  font-family: 'Muli', sans-serif;
 }
 
 input {
@@ -180,9 +180,27 @@ li {
 
 .sound-title {
   display: block;
-  margin-bottom: 3.55em;
-  margin-top: 0em;
+  margin-bottom: -.5em;
+  margin-right: .5em;
+  /*margin-top: -.05em;*/
   cursor: pointer;
+  color: #A8DBA8;
+
+}
+
+.remove-row {
+  color: white;
+  font-size: 1em;
+  border: .1em solid white;
+  width: 1.2em;
+  border-radius: 50%;
+  text-align: center;
+  /*line-height: 1em;*/
+  padding-bottom: .2em;
+  margin-left: 1em;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
 }
 
 .column {
