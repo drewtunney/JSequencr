@@ -5,6 +5,7 @@ class WelcomeController < ApplicationController
   def index
 
     @sounds = list_sounds
+    
   end
 
 
