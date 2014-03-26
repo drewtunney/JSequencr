@@ -24,6 +24,16 @@ Mousetrap.bind('up up down down left right left right b a enter', function(e) {
   var unicornInterval = window.setInterval(flashingUnicorn, unicornFlashingRate);
 });
 
+//Peter is nuts
+Mousetrap.bind('command+ctrl+y', function(e) {
+  console.log("peter is nuts");
+  var setPeterInterval = window.setInterval(makePeterGoCrazy, 100);
+});
+
 function flashingUnicorn(){
   $(".unicorn").toggleClass("show-and-hide");
+}
+
+function makePeterGoCrazy(){
+  $(".selected.in-time").addClass("peter");
 }
