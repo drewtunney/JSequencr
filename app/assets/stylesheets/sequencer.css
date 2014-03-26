@@ -224,7 +224,7 @@ li.sound-choices {
   border: .1em solid white;
   width: 1.2em;
   border-radius: 50%;
-  text-align: center;
+  /*text-align: center;*/
   /*line-height: 1em;*/
   padding-bottom: .2em;
   margin-left: 1em;
