@@ -5,19 +5,19 @@ function triggerEventListeners(){
     $(this).toggleClass("selected");
   });
   //start&pause button starts and pauses timer
-  $("button#start-pause-timer").on('click', function(){
+  $("#start-pause-timer").on('click', function(){
     if (songIsPlaying) {
       songIsPlaying = false;
       clearInterval(intervalID);
-      $(this).text("Start Timer");
+
     } else {
       songIsPlaying = true;
       intervalID = window.setInterval(gridCycle, bpmToBeatVal(BPM));
-      $(this).text("Pause Timer");
+
     }
   });
   //reset timer button resets the timer
-  $("button#reset-timer").on('click', function(){
+  $(".reset-timer").on('click', function(){
     intervalCounter = 0;
     gridCycle();
   });
@@ -34,7 +34,7 @@ function triggerEventListeners(){
     $(".page-overlay").css("display", "none");
   });
   //Add row ("plus") button displays the overlay ready to add a row
-  $("body").on("click", ".add-row", function(){
+  $(".add-row").on("click", function(){
     $(".page-overlay").css("display", "block");
     setOverlayEventListenersFromPlus();
   });
