@@ -1,12 +1,26 @@
 #jSequencr
  
  by Grails DB
+ (a General Assembly operation)
 
-## purpose
+
 ****
-jSequencr is a sequencer/drum machine web app designed by Grails DB for General Assemb.ly's Web Development Immersive group project in March 2014. It utilizes the experimental HTML5 Web Audio API, and so is completely Flash-free. Users can compose beats and save them to their library of songs.
+jSequencer plays sounds on a loop. You can pick what sound plays when, adjust the tempo, and add new sounds.
 
-This is the second project for [General Assembly's Web Development Immersive](https://generalassemb.ly/education/web-development-immersive), week 10 of a 12 week programming intensive that takes people with no programming experience and turns them into full-stack web developers. This is the first group project.
+Like your song? Save it. Load it later and make some changes.
+
+jSequencer is a one page app. Login, save, logout, compose all in one place.
+
+
+## the purpose
+
+****
+We code at General Assmebly in New York in a class called Web Development Immersive or WDI (January 2014). jSequencer is one of our three capstone projects to push our understanding of of languages and concepts learned in class.
+
+This project is mainly javascript with a ruby-on-rails base.
+
+
+ [General Assembly's Web Development Immersive](https://generalassemb.ly/education/web-development-immersive)
 
 
 ## technologies 
@@ -22,20 +36,28 @@ Note: Web Audio API is not supported by IE.
 
 #### Amazon Web Services S3
 ****
-Amazon S3 (Simple Storage Service) was used to store the wav files that make up our drum and other sound samples. 
+Amazon S3 (Simple Storage Service) was used to store the wav files we use as sound samples. 
 
 #### jQuery UI
 ****
-jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. 
+jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.  We use it for the slider on our page.
 
 #### Web Audio API
 ****
 This API facillitates buffering audio sources, playback of those buffers, and a number of other audio manipulations. Much thanks to [Boris Smus](https://github.com/borismus) for his [awesome Web Audio tutorial](http://www.html5rocks.com/en/tutorials/webaudio/intro/).  
 
+We used that tutorial as a starting point mainly to play the sounds themselves. We switched the datastructure and handrolled the timers.
+
 
 #### Mousetrap
 ****
-[Mousetrap](http://craig.is/killing/mice) is a simple library for handling keyboard shortcuts in Javascript.
+[Mousetrap](http://craig.is/killing/mice) is a simple library for handling keyboard shortcuts in Javascript. Try the konami code ending in ENTER on our page.
+
+****
+Thanks to our classmates, GA as a whole, Andrew and Tea for their advice, and the web audio community for their tutorials and blogposts.
+
+
+Special thanks to our instructors: PJ, Peter, and Jeff (and our TA Travis).
 
 
 
