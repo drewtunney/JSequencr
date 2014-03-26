@@ -11,6 +11,7 @@ var newUser = function(name, email, password, password_confirmation){
     }).done(function(data){
       console.log(data.id);
       JSequencr.currentUserId = data.id;
+      JSequencr.currentUserName = data.name;
       updateLoginForm();
     });
 };
@@ -33,6 +34,7 @@ function login(email, password){
         console.log(data);
 
         JSequencr.currentUserId = data.id;
+        JSequencr.currentUserName = data.name;
         updateLoginForm();
       }
   }).fail(function(){
@@ -81,13 +83,22 @@ function updateLoginForm(){
   function hideLogoutButton(){
     $("#log-out").css('display', 'none');
   }
+  function displayUsersName(){
+    var headerText = $("h1").text();
+    $("h1").text(headerText + " " + JSequencr.currentUserName);
+  }
+  function resetHeader(){
+    $("h1").text("Let's Get Weird");
+  }
   if(loggedIn()){
     hideLoginForm();
     hideSignUpForm();
     showLogoutButton();
     hideAuthLinks();
+    displayUsersName();
   } else {
     hideLogoutButton();
     showAuthLinks();
+    resetHeader();
   }
 }

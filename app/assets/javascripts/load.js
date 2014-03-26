@@ -1,5 +1,3 @@
-
-
 $("body").on("click", ".song-choices", function(){
   $(".suite-wrapper").children(".sequencer-column").remove();
   $(".suite-wrapper").children("#drop-column").children().remove();
@@ -8,31 +6,25 @@ $("body").on("click", ".song-choices", function(){
   $("div ul li").remove();
   $(".page-overlay").css("display", "none");
   listSoundChoices();
-})
+});
 
 $(".exit-button").on("click", function(){
   $("div ul li").remove();
   listSoundChoices();
-})
+});
 
 function listUserSongs() {
-  userSongs = $.getJSON("/user/" + window.JSequencr.currentUserId + "/songs").done(
+  var userSongs = $.getJSON("/user/" + window.JSequencr.currentUserId + "/songs").done(
     function(){
-      var songListLength = userSongs.responseJSON.length
+      var songListLength = userSongs.responseJSON.length;
       for (var i = 0; i < songListLength; i++) {
         var songId = userSongs.responseJSON[i].id;
         var title =  userSongs.responseJSON[i].title;
-        $(".all-sounds ul").append($("<li>").append(title).addClass("song-choices").attr("data-song-id", songId));    
+        $(".all-sounds ul").append($("<li>").append(title).addClass("song-choices").attr("data-song-id", songId));
       }
     }
-  )
+  );
 }
-
-// function listSoundChoices() {
-//   $.each(Object.keys(soundURLs), function( index, url) {
-//     $(".all-sounds ul").append($("<li>").append(url).addClass("sound-choices"));
-//   });
-// }
 
 
 function loadSong(loadSongId) {
@@ -53,11 +45,11 @@ function loadSong(loadSongId) {
 }
 
 function loadedBpm(){
-  return loadedSong.responseJSON.bpm
+  return loadedSong.responseJSON.bpm;
 }
 
 function loadedTitle(){
-  return loadedSong.responseJSON.title
+  return loadedSong.responseJSON.title;
 }
 
 function loadedPatternsArray(){
@@ -66,7 +58,7 @@ function loadedPatternsArray(){
 
   for (var i = 0; i < patternObjects.length; i++) {
     patternArray.push(patternObjects[i].pattern);
-  };
+  }
 
   return patternArray;
 }
@@ -77,7 +69,7 @@ function loadedPatternsHash(){
 
   for (var i = 0; i < patternObjects.length; i++) {
     patternHash[patternObjects[i].file_name] = patternObjects[i].pattern;
-  };
+  }
 
   return patternHash;
 }
@@ -100,7 +92,7 @@ function loadRows(){
         newNote = $("<div>").addClass("note row" + rowCount).attr("data-sound", newSound);
         if (loadedPatternsArray()[j][index] === "1") {
           newNote.addClass("selected");
-        };
+        }
         $(column).append(newNote);
       });
       newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
@@ -111,7 +103,7 @@ function loadRows(){
           newNote = $("<div>").addClass("note row" + rowCount).attr("data-sound", newSound);
           if (loadedPatternsArray()[j][i] === "1") {
             newNote.addClass("selected");
-          };
+          }
           $('.suite-wrapper').append($("<div class='sequencer-column' id='column"+ i + "'>").append(newNote));
         }
       newSoundTitle = $("<h3>").addClass("sound-title").attr("name", rowCount).text(newSound);
@@ -119,7 +111,7 @@ function loadRows(){
       $(includeX).attr("id", rowCount).appendTo("#drop-column");
     }
   }
-};
+}
 
 
 
