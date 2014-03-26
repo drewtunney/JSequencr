@@ -184,12 +184,12 @@ li.sound-choices {
   margin: 1em;
 }
 
-.add-row, .reset {
+/*.add-row {
   color: white;
   font-size: 3.2em;
   border: .1em solid white;
   width: 1.2em;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   text-align: center;
   line-height: 1em;
   padding-bottom: .2em;
@@ -202,11 +202,11 @@ li.sound-choices {
        -o-transition: color .1s ease-out .1s;
           transition: color .1s ease-out .1s;
 }
-
-.add-row:hover, .reset:hover {
+/*
+.add-row:hover {
   border: .1em solid #99D4F6;
   color: #BD4D40;
-}
+}*/
 
 .sound-title {
   display: block;
@@ -316,4 +316,14 @@ li.sound-choices {
 .clickable-buttons:hover {
   color: #0B486B;
 }
+.iconmelon {
+  display:inline-block;
+  width:60px;
+  height:60px;
+  fill:white;
+  margin:5px;
+}
 
+.iconmelon:hover {
+  cursor:pointer;
+}
