@@ -85,7 +85,7 @@ function updateLoginForm(){
   }
   function displayUsersName(){
     var headerText = $("h1").text();
-    $("h1").text(headerText + " " + JSequencr.currentUserName);
+    $("h1").text(headerText + ", " + JSequencr.currentUserName);
   }
   function resetHeader(){
     $("h1").text("Let's Get Weird");
