@@ -131,3 +131,10 @@ function removeSoundRow() {
     }
   })
 };
+
+function resetListener() {
+  $(".reset").on("click", function() {
+      reset();
+  })
+
+}

@@ -58,6 +58,7 @@ function settupDOM(){
   updateLoginForm();
   loadUserSongsListener();
   removeSoundRow();
+  resetListener()
 }
 
 
