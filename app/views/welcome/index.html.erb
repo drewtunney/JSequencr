@@ -1,6 +1,6 @@
 <div class="auth-user">
-  <h2 id="sign-up-link">Sign Up</h2>
-  <h2 id="log-in-link">Log in</h2>
+  <h2 id="sign-up-link" class="clickable-links">Sign Up</h2>
+  <h2 id="log-in-link" class="clickable-links">Log in</h2>
 </div>
 
 <form id="sign-up-form">
@@ -12,7 +12,7 @@
   <input id="signup-password" type="password" />
   <label>Password Confirmation:</label>
   <input id="signup-password-confirmation" type="password" />
-  <button id="sign-up" class="submit">Sign up</button>
+  <button id="sign-up" class="submit clickable-buttons">Sign up</button>
 </form>
 
 <form id="log-in-form">
@@ -20,16 +20,15 @@
   <input id="login-email" type="email" />
   <label>Password:</label>
   <input id="login-password" type="password" />
-  <button id="log-in" class="submit">Log in</button>
+  <button id="log-in" class="submit clickable-buttons">Log in</button>
 </form>
 
 <button id='log-out' class="submit">Log Out</button>
-
+<div class="list-songs clickable-links">Song History</div>
 <div class="page-header">
   <h1>Let's Get Weird</h1>
-  <button id="start-pause-timer">Start Timer</button>
-  <button id="reset-timer">Reset Timer</button>
-  <div class="list-songs">List Songs</div>
+  <button id="start-pause-timer" class="clickable-buttons">Start Timer</button>
+  <button id="reset-timer" class="clickable-buttons">Reset Timer</button>
 </div>
 
 <script>
@@ -47,7 +46,7 @@
   <form>
      <label>Song Name</label>
      <input id="song-title"></input>
-     <input type="submit" id="save"></input>
+     <input type="submit" id="save" class="clickable-buttons button"></input>
    </form>
 </div>
 
