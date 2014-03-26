@@ -3,7 +3,6 @@
  by Grails DB
  (a General Assembly operation)
 
-## the app
 
 ****
 jSequencer plays sounds on a loop. You can pick what sound plays when, adjust the tempo, and add new sounds.

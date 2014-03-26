@@ -52,6 +52,7 @@ function triggerEventListeners(){
     currentUserId = window.JSequencr.currentUserId;
     saveSong(currentUserId);
   });
+
 }
 
 //Sign up event Listeners
@@ -114,4 +115,19 @@ function loadUserSongsListener() {
     $(".page-overlay").css("display", "block");
     listUserSongs();
   })
-}
+};
+
+// when x is pressed
+function removeSoundRow() {
+  $("body").on("click", ".remove-row", function(){
+    rowNumber = $(this).attr("id");
+    $(".row"+rowNumber).remove();
+    $(".sound-title[name="+rowNumber+"]").remove();
+    $(".remove-row[id="+rowNumber+"]").remove();
+    //if there are no rows
+    if ($("h3.sound-title").length === 0) {
+      $(".sequencer-column").remove();
+      //delete all columns
+    }
+  })
+};

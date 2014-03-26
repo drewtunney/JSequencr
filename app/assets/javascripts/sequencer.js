@@ -57,6 +57,7 @@ function settupDOM(){
   addLogoutSubmitEventListener();
   updateLoginForm();
   loadUserSongsListener();
+  removeSoundRow();
 }
 
 
