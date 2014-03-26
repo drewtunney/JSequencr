@@ -33,6 +33,8 @@ function loadSong(loadSongId) {
   loadedSong = $.getJSON("/songs/" + loadSongId).done(
     function(response){
       BPM = loadedSong.responseJSON.bpm;
+      $( "#slider" ).slider( "option", "value", BPM );
+      $("#display").html(BPM);
       songId = response.id;
       var title = response.title;
       $("#song-title").val(title); 
