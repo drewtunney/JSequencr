@@ -27,6 +27,7 @@
   <% if logged_in? %>
     <script type="text/javascript">
         JSequencr.currentUserId = <%= current_user.id %>;
+        JSequencr.currentUserName = '<%= current_user.name %>';
     </script>
 
   <% end %>
