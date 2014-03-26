@@ -61,7 +61,7 @@ function setOverlayEventListenersFromPlus(){
 //List all sounds on server in overlay
 function listSoundChoices() {
   $.each(Object.keys(soundURLs), function( index, url) {
-    $(".all-sounds ul").append($("<li>").append(url).addClass("sound-choices"));
+    $(".all-sounds ul").append($("<li>").append(url).addClass("sound-choices clickable-links"));
   });
 }
 
