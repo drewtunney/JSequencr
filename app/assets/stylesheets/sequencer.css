@@ -318,10 +318,11 @@ li.sound-choices {
 }
 .iconmelon {
   display:inline-block;
-  width:60px;
-  height:60px;
+  width:2em;
+  height:2em;
   fill:white;
-  margin:5px;
+  margin:.5em;
+
 }
 
 .iconmelon:hover {
