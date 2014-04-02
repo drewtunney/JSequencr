@@ -69,12 +69,16 @@ h1 {
   font-size: 3em;
 }
 
-h1, h3 {
+h1, h3, h4 {
   color: #79BD9A;
   letter-spacing: .07em;
   margin-left: .4em;
   font-weight: 300;
   font-family: 'Muli', sans-serif;
+}
+
+h4 {
+  margin-left: 1.5em;
 }
 
 h3 {
@@ -320,8 +324,9 @@ li.sound-choices {
   display:inline-block;
   width:2em;
   height:2em;
-  fill:white;
+  fill: white;
   margin:.5em;
+  margin-right: 2em;
 
 }
 

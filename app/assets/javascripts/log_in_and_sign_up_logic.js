@@ -88,7 +88,7 @@ function updateLoginForm(){
     $("h1").text(headerText + ", " + JSequencr.currentUserName);
   }
   function resetHeader(){
-    $("h1").text("Let's Get Weird");
+    $("h1").text("Make a beat");
   }
   if(loggedIn()){
     hideLoginForm();
